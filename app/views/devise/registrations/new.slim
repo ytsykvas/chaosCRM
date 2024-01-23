@@ -9,12 +9,18 @@ h2 Sign up
         = f.input :first_name,
                 required: true,
                 autofocus: true,
-                input_html: { class: "form-control", autocomplete: "first name", placeholder: "First name" }
+                input_html: { class: "form-control",
+                        style: "text-transform: capitalize;",
+                        autocomplete: "first name",
+                        placeholder: "First name" }
       .col
         = f.input :last_name,
                 required: true,
                 autofocus: true,
-                input_html: { class: "form-control", autocomplete: "second name", placeholder: "Last name" }
+                input_html: { class: "form-control",
+                        style: "text-transform: capitalize;",
+                        autocomplete: "second name",
+                        placeholder: "Last name" }
     .row
       .col
         = f.input :email,

@@ -12,5 +12,11 @@
       li.nav-item
         = link_to "Контакти", "#", class: "nav-link"
     ul.navbar-nav.ms-auto
-      li.nav-item
-        = link_to "Вхід/вихід", cancel_user_registration_path, class: "nav-link"
+      - if current_user.present?
+        li.nav-item
+          = link_to "Мій кабінет", "#", class: "btn btn-outline-dark me-2"
+        li.nav-item
+          = link_to "Вийти", destroy_user_session_path, method: :delete, class: "btn btn-danger"
+      - else
+        li.nav-item
+          = link_to "Вхід", new_user_session_path, class: "btn btn-success"
