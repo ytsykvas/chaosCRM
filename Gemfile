@@ -48,6 +48,7 @@ gem 'slim-rails'
 gem "simple_form", github: "heartcombo/simple_form"
 gem "bootstrap", "~> 5.2"
 gem 'sassc'
+gem 'devise'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
