@@ -1,0 +1,14 @@
+h2 = t('devise.mailer.passwords.new.title')
+
+= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :email,
+            label: t('devise.mailer.passwords.new.email_label'),
+            required: true,
+            autofocus: true
+  .form-actions
+    = f.button :submit, t('devise.mailer.passwords.new.submit')
+
+= render "devise/shared/links"

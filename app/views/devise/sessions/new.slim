@@ -1,0 +1,12 @@
+h2.mb-5 = t('devise.sessions.new.title')
+
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .form-inputs
+    = f.input :email, label: t('devise.sessions.new.email_label'), required: false, autofocus: true, input_html: { autocomplete: "email" }
+    = f.input :password, label: t('devise.sessions.new.password_label'), required: false, input_html: { autocomplete: "current-password" }
+    = f.input :remember_me, label: t('devise.sessions.new.remember_me_label'), as: :boolean if devise_mapping.rememberable?
+
+  .form-actions
+    = f.button :submit, t('devise.sessions.new.submit'), class: "btn btn-outline-dark mb-2"
+
+= render "devise/shared/links"
