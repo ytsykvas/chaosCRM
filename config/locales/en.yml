@@ -181,3 +181,18 @@ en:
     my_account: "My page"
     enter: "Enter"
     exit: "Exit"
+  account:
+    title: "My personal room"
+    settings: "Налаштування"
+    admin_navbar:
+      my_planed_visits: "My visits"
+      all_visits: "All visits"
+      customers: "Customers"
+      employees: "Employees"
+      statistic: "Statistic"
+    employee_navbar:
+      my_planed_visits: "My visits"
+      statistic: "My statistic"
+    customer_navbar:
+      my_next_visit: "My next visit"
+      all_visits: "All my visits"

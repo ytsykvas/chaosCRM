@@ -181,3 +181,18 @@ uk:
     my_account: "Мій кабінет"
     enter: "Увійти"
     exit: "Вийти"
+  account:
+    title: "Мій особисти кабінет"
+    settings: "Налаштування"
+    admin_navbar:
+      my_planed_visits: "Мої записи"
+      all_visits: "Всі записи"
+      customers: "Клієнти"
+      employees: "Працівники"
+      statistic: "Статистика"
+    employee_navbar:
+      my_planed_visits: "Мої записи"
+      statistic: "Статистика"
+    customer_navbar:
+      my_next_visit: "Мій наступний запис"
+      all_visits: "Всі мої записи"

@@ -9,7 +9,7 @@ html
     = javascript_include_tag "rails-ujs", "data-turbolinks-track": "reload"
     = javascript_importmap_tags
   body
-    = render "shared/navbar"
+    = render "shared/base/navbar"
     .container.my-5
-      = render "shared/flashes"
+      = render "shared/base/flashes"
       = yield
