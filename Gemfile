@@ -20,6 +20,7 @@ gem 'devise'
 gem "view_component"
 gem "rails-i18n"
 
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem 'rspec-rails', '~> 6.1.0'

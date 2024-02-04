@@ -35,3 +35,4 @@
 /config/master.key
 .idea/dataSources.xml
 .idea/chaos.iml
+/node_modules

@@ -183,16 +183,22 @@ en:
     exit: "Exit"
   account:
     title: "My personal room"
-    settings: "Налаштування"
+    settings: "Settings"
+    calendar: "Master`s calendar"
+    my_messages: "Messages"
     admin_navbar:
       my_planed_visits: "My visits"
       all_visits: "All visits"
       customers: "Customers"
       employees: "Employees"
-      statistic: "Statistic"
+      statistic: "My statistic"
+      finances: "Finances"
     employee_navbar:
+      work_schedule: "Work schedule"
+      my_calendar: "My calendar"
       my_planed_visits: "My visits"
       statistic: "My statistic"
     customer_navbar:
-      my_next_visit: "My next visit"
+      book_visit: "Book a visit"
       all_visits: "All my visits"
+      left_feedback: "Left a feedback"

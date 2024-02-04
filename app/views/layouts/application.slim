@@ -10,6 +10,10 @@ html
     = javascript_importmap_tags
   body
     = render "shared/base/navbar"
-    .container.my-5
-      = render "shared/base/flashes"
-      = yield
+    / = render "shared/account/sidebar/sidebar" if current_user.present?
+    .section.py-5.container
+      .row
+        .col-lg-8.col-md-8.mx-auto
+          = render "shared/base/flashes"
+          = yield
+        .col

@@ -184,15 +184,21 @@ uk:
   account:
     title: "Мій особисти кабінет"
     settings: "Налаштування"
+    calendar: "Календар майстрів"
+    my_messages: "Повідомлення"
     admin_navbar:
       my_planed_visits: "Мої записи"
       all_visits: "Всі записи"
       customers: "Клієнти"
       employees: "Працівники"
       statistic: "Статистика"
+      finances: "Фінанси"
     employee_navbar:
+      work_schedule: "Графік роботи"
+      my_calendar: "Мій календар"
       my_planed_visits: "Мої записи"
       statistic: "Статистика"
     customer_navbar:
-      my_next_visit: "Мій наступний запис"
+      book_visit: "Записатись"
       all_visits: "Всі мої записи"
+      left_feedback: "Залишити відгук"

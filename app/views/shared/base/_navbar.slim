@@ -1,4 +1,4 @@
-.navbar.navbar-expand-sm.navbar-light.navbar-drop
+.navbar.navbar-expand-sm.navbar-light.navbar-drop.border-bottom
   .container-fluid
     ul.navbar-nav
       li.nav-item
@@ -12,17 +12,17 @@
       li.nav-item
         = link_to t('navbar.contacts'), "#", class: "nav-link"
     ul.navbar-nav.ms-auto
-      li.nav-item
+      li.nav-item.mt-2
         = link_to change_locale_to_uk_path do
           = image_tag("languages/ukraine.png", alt: "Українська", class: "language-icon me-2", width: 30, height: 30)
-      li.nav-item
+      li.nav-item.mt-2
         = link_to change_locale_to_en_path do
           = image_tag("languages/english.png", alt: "English", class: "language-icon me-5", width: 30, height: 30)
       - if current_user.present?
-        li.nav-item
+        li.nav-item.mt-2
           = link_to t('navbar.my_account'), "#", class: "btn btn-outline-dark me-2"
-        li.nav-item
+        li.nav-item.mt-2
           = link_to t('navbar.exit'), destroy_user_session_path, method: :delete, class: "btn btn-danger"
       - else
-        li.nav-item
+        li.nav-item.mt-2
           = link_to t('navbar.enter'), new_user_session_path, class: "btn btn-success"
