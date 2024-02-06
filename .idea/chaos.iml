@@ -62,6 +62,7 @@
     <orderEntry type="library" scope="PROVIDED" name="factory_bot_rails (v6.4.3, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faker (v3.2.3, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.16.3, RVM: ruby-3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="font-awesome-sass (v6.5.1, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.14.1, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="importmap-rails (v2.0.1, RVM: ruby-3.2.2) [gem]" level="application" />
@@ -120,7 +121,6 @@
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.0, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.3.0, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.1, RVM: ruby-3.2.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v1.5.0, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="view_component (v3.10.0, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, RVM: ruby-3.2.2) [gem]" level="application" />
@@ -644,19 +644,6 @@
               <RakeTaskImpl id="storage">
                 <subtasks>
                   <RakeTaskImpl description="" fullCommand="tmp:storage:clear" id="clear" />
-                </subtasks>
-              </RakeTaskImpl>
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="turbo">
-            <subtasks>
-              <RakeTaskImpl description="Install Turbo into the app" fullCommand="turbo:install" id="install" />
-              <RakeTaskImpl id="install">
-                <subtasks>
-                  <RakeTaskImpl description="Install Turbo into the app with bun" fullCommand="turbo:install:bun" id="bun" />
-                  <RakeTaskImpl description="Install Turbo into the app with asset pipeline" fullCommand="turbo:install:importmap" id="importmap" />
-                  <RakeTaskImpl description="Install Turbo into the app with webpacker" fullCommand="turbo:install:node" id="node" />
-                  <RakeTaskImpl description="Switch on Redis and use it in development" fullCommand="turbo:install:redis" id="redis" />
                 </subtasks>
               </RakeTaskImpl>
             </subtasks>

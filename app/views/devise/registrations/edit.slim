@@ -19,7 +19,7 @@ h2 = t('devise.registrations.edit.title', object: resource_name.to_s.humanize)
             required: true
 
   .form-actions
-    = f.button :submit, t('devise.registrations.edit.update')
+    = f.button :submit, t('devise.registrations.edit.update'), class: "btn btn-dark"
 
 h3 = t('devise.registrations.edit.cancel_account')
 

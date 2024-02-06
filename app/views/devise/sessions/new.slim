@@ -1,12 +1,17 @@
 h2.mb-5 = t('devise.sessions.new.title')
+.container-sm
+  .row
+    .col-sm-4
+      = image_tag("content/login.jpg", alt: "Edit Entry")
 
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :email, label: t('devise.sessions.new.email_label'), required: false, autofocus: true, input_html: { autocomplete: "email" }
-    = f.input :password, label: t('devise.sessions.new.password_label'), required: false, input_html: { autocomplete: "current-password" }
-    = f.input :remember_me, label: t('devise.sessions.new.remember_me_label'), as: :boolean if devise_mapping.rememberable?
+    / img src="content/diana.png" alt="Текст для атрибута alt" width="100%" height="100%"
+    .col-sm-8
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-inputs.mt-3
+          = f.input :email, label: t('devise.sessions.new.email_label'), required: false, autofocus: true, input_html: { autocomplete: "email" }
+          = f.input :password, label: t('devise.sessions.new.password_label'), required: false, input_html: { autocomplete: "current-password" }
+          = f.input :remember_me, label: t('devise.sessions.new.remember_me_label'), as: :boolean if devise_mapping.rememberable?
 
-  .form-actions
-    = f.button :submit, t('devise.sessions.new.submit'), class: "btn btn-outline-dark mb-2"
-
-= render "devise/shared/links"
+        .form-actions
+          = f.button :submit, t('devise.sessions.new.submit'), class: "btn btn-dark mb-2"
+        = render "devise/shared/links"

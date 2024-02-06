@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.0"
+    "bootstrap": "^5.3.2",
+    "jquery": "^3.7.1"
   },
   "name": "chaos",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
