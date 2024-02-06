@@ -176,7 +176,7 @@ uk:
     index: "Головна"
     services: "Послуги"
     masters: "Майстри"
-    book_services: "Записатись"
+    reserve: "Записатись"
     contacts: "Контакти"
     my_account: "Мій кабінет"
     enter: "Увійти"

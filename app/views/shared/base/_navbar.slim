@@ -16,7 +16,7 @@
               = link_to t('navbar.masters'), "#", class: "nav-link"
           .col
             li.nav-item
-              = link_to t('navbar.book_services'), "#", class: "nav-link"
+              = link_to t('navbar.reserve'), "#", class: "nav-link"
       ul.navbar-nav.ms-auto
         / тимчасово вимкнув перемикач мови
         / li.nav-item.mt-2.mb-2
@@ -30,7 +30,12 @@
           li.nav-item.mt-1
             = link_to t('navbar.exit'),
                     destroy_user_session_path,
-                    method: :delete, class: "btn btn-dark me-2 d-block"
+                    method: :delete,
+                    class: "btn btn-dark me-2 d-block",
+                    input_html: { "data-test-id": "log_out_button" }
         - else
           li.nav-item
-            = link_to t('navbar.enter'), new_user_session_path, class: "btn btn-dark d-block"
+            = link_to t('navbar.enter'),
+                    new_user_session_path,
+                    class: "btn btn-dark d-block",
+                    input_html: { "data-test-id": "log_in_button" }

@@ -176,7 +176,7 @@ en:
     index: "Home"
     services: "Services"
     masters: "Masters"
-    book_services: "Reserve"
+    reserve: "Reserve"
     contacts: "Contacts"
     my_account: "My page"
     enter: "Enter"

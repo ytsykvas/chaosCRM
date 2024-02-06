@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeUserTypeToAccountType < ActiveRecord::Migration[7.1]
   def change
     remove_column :users, :type
