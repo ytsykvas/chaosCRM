@@ -1,5 +1,29 @@
-.typical-blue {
-  background-color: #5f718c;
-  border-bottom: 2px solid #fff; /* Додано нижнє підкреслення */
-  box-shadow: 0 4px 4px -2px #2a2929; /* Додано зовнішню тінь знизу */
+.haos-navbar {
+  background-color: #8ca3c2;
+  border-bottom: 2px solid #161d3a;
+  box-shadow: 0 4px 4px -2px #599b9b;
+}
+
+.haos-toolbar {
+  background-color: #ffffff;
+  //border-bottom: 2px solid #161d3a;
+  //border-left: 2px solid #161d3a;;
+  //border-right: 2px solid #161d3a;;
+  //border-top: 2px solid #161d3a;
+  //box-shadow: 0 4px 4px -2px #599b9b;
+}
+
+@media (min-width: 816px) { /* Застосувати лише для екранів шириною 992px або більше */
+  .border-right {
+    border-right: 1px solid #262626;
+    padding-right: 10px; /* Опціонально: додайте відступ для розділення між елементами */
+  }
+}
+
+@media (max-width: 815.98px) { /* Застосувати лише для екранів шириною менше 992px */
+  .border-right {
+    border-right: none; /* Видаліть border-right */
+    border-bottom: 1px solid #262626; /* Додайте border-bottom */
+    padding-right: 0; /* Опціонально: скинути відступ, якщо він використовується для border-right */
+  }
 }

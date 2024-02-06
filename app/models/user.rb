@@ -3,7 +3,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
-  before_validation :normalize_phone_number
+  before_validation :normalize_phone_number, :normalize_name
 
   validates :email, presence: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
   validates :phone, presence: true, format: { with: /\A\+?\d{10,15}\z/ }
@@ -15,5 +15,10 @@ class User < ApplicationRecord
 
   def normalize_phone_number
     self.phone = phone.gsub(/\D/, '') if phone.present?
+  end
+
+  def normalize_name
+    self.first_name = first_name.downcase.capitalize if first_name.present?
+    self.last_name = last_name.downcase.capitalize if last_name.present?
   end
 end

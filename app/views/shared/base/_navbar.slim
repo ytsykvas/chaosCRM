@@ -1,4 +1,4 @@
-.navbar.navbar-expand-sm.navbar-light.navbar-drop.typical-blue
+.navbar.navbar-expand-sm.navbar-light.navbar-drop.haos-navbar
   .container-fluid
     button.navbar-toggler[type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
       span.navbar-toggler-icon
@@ -26,7 +26,7 @@
         /     = image_tag("languages/english.png", alt: "English", class: "language-icon me-5", width: 30, height: 30)
         - if current_user.present?
           li.nav-item.mt-1
-            = link_to t('navbar.my_account'), "#", class: "btn btn-outline-dark me-2 d-block"
+            = link_to t('navbar.my_account'), profile_path, class: "btn btn-outline-dark me-2 d-block"
           li.nav-item.mt-1
             = link_to t('navbar.exit'),
                     destroy_user_session_path,
