@@ -22,3 +22,17 @@
     padding-right: 0;
   }
 }
+
+.sticky-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Значення z-index може бути будь-яким, головне, щоб воно було вищим, ніж у інших елементів */
+  background-color: rgba(255, 255, 255, 0); /* Прозорий фон */
+}
+
+.sticky-navbar .nav-link {
+  color: #000; /* Колір тексту */
+}
+

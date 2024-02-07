@@ -8,7 +8,7 @@
     tbody
       - @customers.each do |customer|
         tr
-          td = customer.first_name + " " + customer.last_name
+          td = customer.full_name
           td = customer.phone
           td = customer.email
 .pagination-centered

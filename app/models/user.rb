@@ -11,6 +11,10 @@ class User < ApplicationRecord
   validates :last_name, presence: true, format: { with: /\A[\p{L}'][\p{L}'-]{0,14}\z/u }
   validates :account_type, inclusion: { in: %w[visitor admin employee] }
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   private
 
   def normalize_phone_number
