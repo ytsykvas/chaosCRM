@@ -2,15 +2,15 @@ h4 = t('account.title') + " - " + @user.first_name + " " + @user.last_name
 .navbar.navbar-expand-sm.haos-toolbar
   .container-fluid.justify-content-center.text-center
     ul.navbar-nav
-      li.nav-item
+      li.nav-item.border-right
         = link_to t('account.customer_navbar.book_visit'), "#", class: "nav-link link-body-emphasis"
-      li.nav-item
+      li.nav-item.border-right
         = link_to t('account.customer_navbar.all_visits'), "#", class: "nav-link link-body-emphasis"
-      li.nav-item
+      li.nav-item.border-right
         = link_to t('account.calendar'), "#", class: "nav-link link-body-emphasis"
-      li.nav-item
+      li.nav-item.border-right
         = link_to t('account.customer_navbar.left_feedback'), "#", class: "nav-link link-body-emphasis"
-      li.nav-item
-        = link_to t('account.my_messages'), "#", class: "btn btn-outline-dark mt-3"
-      li.nav-item
+      li.nav-item.border-right
+        = link_to t('account.my_messages'), "#", class: "nav-link link-body-emphasis"
+      li.nav-item.border-right
         = link_to t('account.settings'), "#", class: "nav-link link-body-emphasis"
