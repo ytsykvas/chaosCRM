@@ -1,0 +1,15 @@
+.table-responsive
+  table.table.table-bordered.mt-3
+    thead
+      tr
+        th = t('customers.table.name')
+        th = t('customers.table.phone')
+        th = t('customers.table.email')
+    tbody
+      - @customers.each do |customer|
+        tr
+          td = customer.first_name + " " + customer.last_name
+          td = customer.phone
+          td = customer.email
+.pagination-centered
+  = will_paginate @customers, renderer: BootstrapPagination::Rails

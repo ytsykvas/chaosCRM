@@ -21,4 +21,8 @@ class User < ApplicationRecord
     self.first_name = first_name.downcase.capitalize if first_name.present?
     self.last_name = last_name.downcase.capitalize if last_name.present?
   end
+
+  scope :visitors, -> { where(account_type: 'visitor') }
+  scope :admins, -> { where(account_type: 'admin') }
+  scope :employees, -> { where(account_type: 'employee') }
 end

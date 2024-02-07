@@ -1,0 +1,47 @@
+.search-form {
+  display: flex;
+  align-items: center; /* Центрування елементів по вертикалі */
+  border: 1px solid #ccc; /* Колір рамки */
+  border-radius: 20px; /* Заокруглені кути */
+  overflow: hidden; /* Заокруглені кути */
+  margin-right: 20px;
+}
+
+.search-field {
+  flex: 1; /* Розтягування вікна пошуку на всю доступну ширину */
+  padding: 8px 12px; /* Заповнення вікна пошуку */
+  border: none; /* Видалення рамки */
+  outline: none; /* Видалення контуру */
+  font-size: 16px; /* Розмір шрифту */
+  border-radius: 20px; /* Заокруглені кути */
+}
+
+.search-button {
+  background-color: #80848c; /* Колір фону кнопки */
+  color: #fff; /* Колір тексту кнопки */
+  border: none; /* Видалення рамки кнопки */
+  padding: 8px 16px; /* Заповнення кнопки */
+  font-size: 16px; /* Розмір шрифту */
+  border-radius: 20px; /* Заокруглені кути */
+  cursor: pointer; /* Зміна курсору при наведенні */
+}
+
+.search-button:hover {
+  background-color: #000000; /* Колір фону кнопки при наведенні */
+}
+
+@media screen and (max-width: 600px) {
+  .search-form {
+    flex-direction: column; /* Розміщення елементів стовпчиком */
+  }
+
+  .search-field {
+    width: 100%; /* Ширина вікна пошуку на всю доступну ширину */
+    //margin-bottom: 10px; /* Відступ між вікном пошуку та кнопкою */
+  }
+
+  .search-button {
+    width: 100%; /* Ширина кнопки на всю доступну ширину, за винятком відступів */
+    //margin-left: 12px; /* Відступ від лівого краю */
+  }
+}

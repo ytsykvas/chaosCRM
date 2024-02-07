@@ -1,4 +1,6 @@
 uk:
+  basic:
+    back: "Назад"
   devise:
     confirmations:
       new:
@@ -138,30 +140,8 @@ uk:
     required:
       text: 'Необхідно'
       mark: '*'
-      # You can uncomment the line below if you need to overwrite the whole required html.
-      # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Розгляньте такі помилки:"
-    # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
-    # include_blanks:
-    #   defaults:
-    #     age: 'Rather not say'
-    # prompts:
-    #   defaults:
-    #     age: 'Select your age'
   errors:
     messages:
       already_confirmed: "вже підтверджено, спробуйте увійти"
@@ -202,3 +182,12 @@ uk:
       book_visit: "Записатись"
       all_visits: "Всі мої записи"
       left_feedback: "Залишити відгук"
+  customers:
+    title: "Всі наші відвідувачі"
+    search: "Знайти відвідувача"
+    search_submit: "Пошук"
+    export: "Скачати PDF"
+    table:
+      name: "Ім'я"
+      phone: "Телефон"
+      email: "Пошта"
