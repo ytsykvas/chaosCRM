@@ -1,8 +1,8 @@
 h2.mb-5 = t('devise.sessions.new.title')
 .container-sm
   .row
-    .col-sm-4
-      = image_tag("content/login.jpg", alt: "Edit Entry")
+    .col-sm-4.text-center
+      = image_tag("content/login.jpg", alt: "Edit Entry", style: 'width: 70%; height: auto;')
     .col-sm-8
       = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .form-inputs.mt-3

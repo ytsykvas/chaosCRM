@@ -1,7 +1,7 @@
 .haos-navbar {
-  background-color: #8ca3c2;
+  background-color: #80848c;
   border-bottom: 2px solid #161d3a;
-  box-shadow: 0 4px 4px -2px #599b9b;
+  box-shadow: 0 4px 4px -2px #000000;
 }
 
 .haos-toolbar {
@@ -13,17 +13,17 @@
   //box-shadow: 0 4px 4px -2px #599b9b;
 }
 
-@media (min-width: 816px) { /* Застосувати лише для екранів шириною 992px або більше */
+@media (min-width: 766px) {
   .border-right {
     border-right: 1px solid #262626;
-    padding-right: 10px; /* Опціонально: додайте відступ для розділення між елементами */
+    padding-right: 10px;
   }
 }
 
-@media (max-width: 815.98px) { /* Застосувати лише для екранів шириною менше 992px */
+@media (max-width: 765.98px) {
   .border-right {
-    border-right: none; /* Видаліть border-right */
-    border-bottom: 1px solid #262626; /* Додайте border-bottom */
-    padding-right: 0; /* Опціонально: скинути відступ, якщо він використовується для border-right */
+    border-right: none;
+    border-bottom: 1px solid #262626;
+    padding-right: 0;
   }
 }

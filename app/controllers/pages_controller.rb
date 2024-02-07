@@ -4,6 +4,6 @@ class PagesController < ApplicationController
   def index; end
 
   def profile
-    @user = current_user
+    @user = current_user if current_user.present?
   end
 end

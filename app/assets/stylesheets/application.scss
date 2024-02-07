@@ -1,3 +1,8 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "navbar/navbar";
+
+.haos-body {
+  background-image: url('/assets/content/background.jpg');
+  background-size: cover;
+}
