@@ -24,6 +24,10 @@ class SearchService
     results.sort_by { |result| -result[:relevance] }.map { |item| item[:entry] }
   end
 
+  def get_filtered_ids
+    @data.map(&:id) if @data.present?
+  end
+
   private
 
   def calculate_relevance(entry, terms)

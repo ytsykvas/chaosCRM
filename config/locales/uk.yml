@@ -191,3 +191,7 @@ uk:
       name: "Ім'я"
       phone: "Телефон"
       email: "Пошта"
+    filter_buttons:
+      have_not_visited: "Ніразу не записувався"
+      long_time_ago: "Був давно"
+      skip_filters: "Скинути фільтри"

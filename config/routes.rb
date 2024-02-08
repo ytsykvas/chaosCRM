@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'customers', to: 'profiles#customers'
       get 'no_last_visit', to: 'profiles#no_last_visit'
       get 'old_last_visit', to: 'profiles#old_last_visit'
+      get 'download_xls', to: 'profiles#download_xls'
     end
   end
   get '/profile', to: 'pages#profile'
