@@ -1,6 +1,10 @@
 en:
   basic:
     back: "Back"
+  pundit:
+    default: 'You cannot perform this action.'
+    customers_policy:
+      customers?: 'You cannot see this page. You are not an admin.'
   devise:
     confirmations:
       new:

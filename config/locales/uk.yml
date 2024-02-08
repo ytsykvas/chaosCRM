@@ -1,6 +1,10 @@
 uk:
   basic:
     back: "Назад"
+  pundit:
+    default: 'Ви не можете здійснити цю дію.'
+    customers_policy:
+      customers?: 'Ви не можете переглядати цю сторінку. Ви не адміністратор.'
   devise:
     confirmations:
       new:

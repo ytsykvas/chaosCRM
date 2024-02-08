@@ -11,8 +11,16 @@ class User < ApplicationRecord
   validates :last_name, presence: true, format: { with: /\A[\p{L}'][\p{L}'-]{0,14}\z/u }
   validates :account_type, inclusion: { in: %w[visitor admin employee] }
 
+  scope :visitors, -> { where(account_type: 'visitor') }
+  scope :admins, -> { where(account_type: 'admin') }
+  scope :employees, -> { where(account_type: 'employee') }
+
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def admin?
+    account_type == 'admin'
   end
 
   private
@@ -26,7 +34,5 @@ class User < ApplicationRecord
     self.last_name = last_name.downcase.capitalize if last_name.present?
   end
 
-  scope :visitors, -> { where(account_type: 'visitor') }
-  scope :admins, -> { where(account_type: 'admin') }
-  scope :employees, -> { where(account_type: 'employee') }
+
 end
