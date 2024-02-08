@@ -186,11 +186,13 @@ uk:
     title: "Всі наші відвідувачі"
     search: "Знайти відвідувача"
     search_submit: "Пошук"
-    export: "Скачати PDF"
+    export: "Скачати XLS"
     table:
       name: "Ім'я"
       phone: "Телефон"
       email: "Пошта"
+      last_visit: "Останній запис"
+      never: "Ніколи"
     filter_buttons:
       have_not_visited: "Ніразу не записувався"
       long_time_ago: "Був давно"

@@ -5,12 +5,14 @@
         th = t('customers.table.name')
         th = t('customers.table.phone')
         th = t('customers.table.email')
+        th = t('customers.table.last_visit')
     tbody
       - @customers.each do |customer|
         tr
           td = customer.full_name
           td = customer.phone
           td = customer.email
+          td = customer.last_visit.present? ? customer.last_visit.to_date.to_s : t('customers.table.never')
   = link_to t('customers.filter_buttons.have_not_visited'),
           no_last_visit_profiles_path,
           class: 'btn btn-outline-dark d-block mt-2'

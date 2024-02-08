@@ -186,11 +186,13 @@ en:
     title: "All our customers"
     search: "Search visitor"
     search_submit: "Search"
-    export: "Export PDF"
+    export: "Export XLS"
     table:
       name: "Name"
       phone: "Phone"
       email: "Email"
+      last_visit: "Last visit"
+      never: "Never"
     filter_buttons:
       have_not_visited: "Have no visited"
       long_time_ago: "Long time ago"
