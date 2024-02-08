@@ -11,5 +11,14 @@
           td = customer.full_name
           td = customer.phone
           td = customer.email
+  = link_to "Ніразу не записувався",
+          no_last_visit_profiles_path,
+          class: 'btn btn-outline-dark d-block mt-2'
+  = link_to "Був давно",
+          old_last_visit_profiles_path,
+          class: 'btn btn-outline-dark d-block mt-2'
+  = link_to "Скинути фільтри",
+          customers_profiles_path,
+          class: 'btn btn-outline-primary d-block mt-2'
 .pagination-centered
   = will_paginate @customers, renderer: BootstrapPagination::Rails

@@ -13,11 +13,13 @@ gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.2'
 gem 'font-awesome-sass', '~> 6.1'
 gem 'jbuilder'
+gem 'prawn' # for pdf export
 gem 'rails-i18n'
 gem 'sassc'
 gem 'sassc-rails'
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'slim-rails'
+gem 'spreadsheet' # for EXEL file export
 gem 'stimulus-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'view_component'
