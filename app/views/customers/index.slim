@@ -5,5 +5,5 @@
   = form_for :search, method: :get, remote: false, html: { class: "search-form" } do |f|
     = f.search_field :query, placeholder: t('customers.search'), class: 'search-field me-2'
     = f.submit t('customers.search_submit'), class: 'search-button'
-  = link_to t('customers.export'), download_xls_profiles_path(@customers_ids), class: 'btn btn-outline-dark'
+  = link_to t('customers.export'), download_xls_customers_path(@customers_ids), class: 'btn btn-outline-dark'
 = render "shared/customers/customers_table"

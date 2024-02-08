@@ -7,12 +7,12 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   devise_for :users
-  resources :profiles, only: [] do
+  resources :customers, only: [] do
     collection do
-      get 'customers', to: 'profiles#customers'
-      get 'no_last_visit', to: 'profiles#no_last_visit'
-      get 'old_last_visit', to: 'profiles#old_last_visit'
-      get 'download_xls', to: 'profiles#download_xls'
+      get 'index', to: 'customers#index'
+      get 'no_last_visit', to: 'customers#no_last_visit'
+      get 'old_last_visit', to: 'customers#old_last_visit'
+      get 'download_xls', to: 'customers#download_xls'
     end
   end
   get '/profile', to: 'pages#profile'
