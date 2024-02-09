@@ -6,6 +6,6 @@ class CustomersPolicy < ApplicationPolicy
   end
 
   def customers?
-    user.admin?
+    user&.admin?
   end
 end
