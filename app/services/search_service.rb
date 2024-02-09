@@ -51,10 +51,10 @@ class SearchService
   end
 
   def old_last_visit
-    @data = @data.where('last_visit < ?', 1.month.ago)
+    @data = @data.select { |customer| customer.last_visit.present? && customer.last_visit < 1.month.ago }
   end
 
   def no_last_visit
-    @data = @data.where(last_visit: nil)
+    @data = @data.select { |customer| customer.last_visit.nil? }
   end
 end
