@@ -14,6 +14,7 @@ gem 'bootstrap', '~> 5.2'
 gem 'font-awesome-sass', '~> 6.1'
 gem 'jbuilder'
 gem 'prawn' # for pdf export
+gem 'pundit'
 gem 'rails-i18n'
 gem 'sassc'
 gem 'sassc-rails'
@@ -26,7 +27,6 @@ gem 'view_component'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'will_paginate-bootstrap4'
-gem 'pundit'
 
 group :development, :test do
   gem 'capybara-selenium' # MIT-License

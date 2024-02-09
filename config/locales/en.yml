@@ -5,6 +5,8 @@ en:
     default: 'You cannot perform this action.'
     customers_policy:
       customers?: 'You cannot see this page. You are not an admin.'
+    pages_policy:
+      profile?: 'You should sign in to see your profile.'
   devise:
     confirmations:
       new:

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe CustomersPolicy, type: :policy do
@@ -6,12 +8,12 @@ RSpec.describe CustomersPolicy, type: :policy do
   subject { described_class }
 
   permissions :customers? do
-    it "grants access to admin users" do
+    it 'grants access to admin users' do
       user.update!(account_type: 'admin')
       expect(subject).to permit(user)
     end
 
-    it "denies access to non-admin users" do
+    it 'denies access to non-admin users' do
       expect(subject).not_to permit(user)
     end
   end

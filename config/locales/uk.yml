@@ -5,6 +5,8 @@ uk:
     default: 'Ви не можете здійснити цю дію.'
     customers_policy:
       customers?: 'Ви не можете переглядати цю сторінку. Ви не адміністратор.'
+    pages_policy:
+      profile?: 'Вам потрібно ввійти в свій обліковий запис, щоб відвідати свій кібінет'
   devise:
     confirmations:
       new:
