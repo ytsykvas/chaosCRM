@@ -11,7 +11,7 @@ Feature: User can see navbar
     And I should not see the text: my page
 
   Scenario: User is logged in as a supplier
-    Given We register a visitor
+    Given We register visitor user
     Then I should see the text: main page
     Then I should see the text: services
     Then I should see the text: masters
