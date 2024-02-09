@@ -5,8 +5,7 @@ class CustomersController < ApplicationController
   before_action :authorise_user
 
   def index
-    @customers = User.visitors
-    filtered_data = SearchService.new(@customers, params['visit_filter']).search(params.dig(:search, :query) || ' ')
+    filtered_data = SearchService.new(User.visitors, params['visit_filter']).search(params.dig(:search, :query) || ' ')
     @customers = filtered_data.paginate(page: params[:page], per_page: 10)
     @customers_ids = SearchService.new(filtered_data).get_filtered_ids
   end
