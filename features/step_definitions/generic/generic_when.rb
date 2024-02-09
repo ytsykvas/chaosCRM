@@ -8,6 +8,8 @@ When(/I visit (.*?) page/) do |page|
            new_user_session_path
          when 'main'
            root_path
+         when 'profile'
+           profile_path
          end
   visit path
 end

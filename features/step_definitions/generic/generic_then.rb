@@ -23,7 +23,27 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     my_account: 'navbar.my_account',
     'log in': 'navbar.enter',
     'log out': 'navbar.exit',
-    'my page': 'navbar.my_account'
+    'my page': 'navbar.my_account',
+    # toolbar
+    'profile title': 'account.title',
+    'messages': 'account.my_messages',
+    'settings': 'account.settings',
+    # toolbar (admin)
+    'admin my planed visits': 'account.admin_navbar.my_planed_visits',
+    'admin all planed visits': 'account.admin_navbar.all_visits',
+    'admin all customers': 'account.admin_navbar.customers',
+    'admin all employees': 'account.admin_navbar.employees',
+    'admin all statistic': 'account.admin_navbar.statistic',
+    'admin all finances': 'account.admin_navbar.finances',
+    # toolbar (employee)
+    'employee work schedule': 'account.employee_navbar.work_schedule',
+    'employee planed visits': 'account.employee_navbar.my_planed_visits',
+    'employee my calendar': 'account.employee_navbar.my_calendar',
+    'employee statistic': 'account.employee_navbar.statistic',
+    # toolbar (visitor)
+    'visitor book visit': 'account.customer_navbar.book_visit',
+    'visitor all visits': 'account.customer_navbar.all_visits',
+    'visitor left feedback': 'account.customer_navbar.left_feedback'
   }.stringify_keys
   text = I18n.t(hash_of_i18n_keys.fetch(key))
   wait ||= Capybara.default_max_wait_time
