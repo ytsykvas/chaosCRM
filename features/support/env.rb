@@ -2,7 +2,6 @@
 
 require 'cucumber/rails'
 require 'capybara/cucumber'
-require 'database_cleaner'
 require 'devise'
 
 ActionController::Base.allow_rescue = false
@@ -13,7 +12,7 @@ begin
 rescue NameError
   raise 'You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it.'
 end
-
+DatabaseCleaner.clean
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
 #

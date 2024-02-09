@@ -2,6 +2,7 @@
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require "pundit/rspec"
 # require 'rspec/rails'
 # require 'devise'
 ENV['RAILS_ENV'] ||= 'test'

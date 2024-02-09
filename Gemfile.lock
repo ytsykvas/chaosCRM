@@ -143,8 +143,6 @@ GEM
       cucumber (>= 5, < 10)
       railties (>= 5.2, < 8)
     cucumber-tag-expressions (5.0.6)
-    database_cleaner (2.0.2)
-      database_cleaner-active_record (>= 2, < 3)
     database_cleaner-active_record (2.1.0)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
@@ -405,7 +403,7 @@ DEPENDENCIES
   capybara-selenium
   capybara-slow_finder_errors
   cucumber-rails
-  database_cleaner
+  database_cleaner-active_record
   debug
   devise
   factory_bot_rails
