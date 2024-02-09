@@ -31,8 +31,4 @@ class CustomersController < ApplicationController
   def authorise_user
     authorize :customers, :customers?
   end
-
-  # def pundit_user
-  #   current_user
-  # end
 end
