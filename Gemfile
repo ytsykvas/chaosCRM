@@ -27,6 +27,7 @@ gem 'view_component'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'will_paginate-bootstrap4'
+gem 'awesome_rails_console'
 
 group :development, :test do
   gem 'capybara-selenium' # MIT-License
