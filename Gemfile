@@ -9,6 +9,7 @@ gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.2'
 gem 'sprockets-rails'
 # gem "turbo-rails"
+gem 'awesome_rails_console'
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.2'
 gem 'font-awesome-sass', '~> 6.1'
@@ -27,7 +28,6 @@ gem 'view_component'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'will_paginate-bootstrap4'
-gem 'awesome_rails_console'
 
 group :development, :test do
   gem 'capybara-selenium' # MIT-License

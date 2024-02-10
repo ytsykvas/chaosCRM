@@ -1,0 +1,15 @@
+table-responsive
+  table.table.table-bordered.mt-3
+    tbody 
+      tr
+        td = t('customers.table.name')
+        td = @customer.full_name
+      tr 
+        td = t('customers.table.email')
+        td = @customer.email
+      tr 
+        td = t('customers.table.phone')
+        td = @customer.phone
+      tr 
+        td = t('customers.table.last_visit')
+        td = @customer.last_visit.present? ?  @customer.last_visit : t('customers.table.never')

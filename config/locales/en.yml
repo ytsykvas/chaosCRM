@@ -4,7 +4,8 @@ en:
   pundit:
     default: 'You cannot perform this action.'
     customers_policy:
-      customers?: 'You cannot see this page. You are not an admin.'
+      index?: 'You cannot see this page. You are not an admin.'
+      show?: 'Ony admin or employee can see this page.'
     pages_policy:
       profile?: 'You should sign in to see your profile.'
   devise:
@@ -203,3 +204,9 @@ en:
       have_not_visited: "Have no visited"
       long_time_ago: "Long time ago"
       skip_filters: "Skip filters"
+    show:
+      book_visit: "Reserve visit"
+      edit: "Edit"
+      bonuses: "Bonuses"
+      block: "Ban visitor"
+

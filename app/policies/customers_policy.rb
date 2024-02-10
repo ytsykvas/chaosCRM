@@ -7,7 +7,11 @@ class CustomersPolicy < ApplicationPolicy
     end
   end
 
-  def customers?
+  def index?
     user&.admin?
+  end
+
+  def show?
+    user&.admin? || user&.employee?
   end
 end

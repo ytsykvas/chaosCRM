@@ -1,0 +1,16 @@
+.d-flex.justify-content-between.align-items-center
+  h1 = @customer.full_name
+  = link_to t('basic.back'), customers_path, class: 'btn btn-secondary'
+.row
+  .col-4.text-center
+    .container
+      .row.mt-3
+        = link_to t('customers.show.book_visit'), "#", class: 'btn btn-dark'
+      .row.mt-3
+        = link_to t('customers.show.bonuses'), "#", class: 'btn btn-dark'
+      .row.mt-3
+        = link_to t('customers.show.edit'), "#", class: 'btn btn-dark'
+      .row.mt-3
+        = link_to t('customers.show.block'), "#", class: 'btn btn-danger'
+  .col-8
+    = render  "shared/customers/customer_data_table"

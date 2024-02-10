@@ -9,7 +9,7 @@
     tbody
       - @customers.each do |customer|
         tr
-          td = customer.full_name
+          td = link_to "#{customer.full_name}", customer_path(customer)
           td = customer.phone
           td = customer.email
           td = customer.last_visit.present? ? customer.last_visit.to_date.to_s : t('customers.table.never')

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   devise_for :users
-  resources :customers, only: [] do
+  resources :customers, only: %i[index show] do
     collection do
       get 'index', to: 'customers#index'
       get 'no_last_visit', to: 'customers#no_last_visit'

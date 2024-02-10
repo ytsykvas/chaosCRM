@@ -12,7 +12,14 @@ When(/I visit (.*?) page/) do |page|
            profile_path
          when 'customers'
            customers_path
+         when 'first customer'
+           customer_path(1)
          end
+  visit path
+end
+
+When(/I visit (.*?) number (.*?)/) do |_model, id|
+  customer_path(id.to_i)
   visit path
 end
 

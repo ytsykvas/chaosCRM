@@ -4,8 +4,10 @@ Then('I click submit') do
   all('[type="submit"]').last.click
 end
 
-Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text: (.*)/) do |wait, see_or_not, key|
+Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text: (.*)/) do |wait, see_or_not, key| # rubocop:disable Metrics/BlockLength
   hash_of_i18n_keys = {
+    # Base
+    'back': 'basic.back',
     # Devise
     'sign up title': 'devise.registrations.new.title',
     'email field label': 'devise.registrations.new.email',
@@ -57,7 +59,13 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     'never been customers button': 'customers.filter_buttons.have_not_visited',
     'last visit later then month customers button': 'customers.filter_buttons.long_time_ago',
     'skip filters button': 'customers.filter_buttons.skip_filters',
-    'can not visit customers': 'pundit.customers_policy.customers?'
+    'can not visit customers': 'pundit.customers_policy.customers?',
+    # customer
+    'book visit for customer': 'customers.show.book_visit',
+    'customer bonuses': 'customers.show.bonuses',
+    'edit customer': 'customers.show.edit',
+    'block customer': 'customers.show.block',
+    'visitor can not visit customer page': 'pundit.customers_policy.show?'
   }.stringify_keys
   text = I18n.t(hash_of_i18n_keys.fetch(key))
   wait ||= Capybara.default_max_wait_time
@@ -70,6 +78,13 @@ end
 
 Then(/^I see text: (.+)/) do |text|
   expect(page).to have_text(text)
+end
+
+Then(/^I see (.+)/) do |text|
+  case text
+  when 'first customer'
+    User.visitors.first.full_name
+  end
 end
 
 Then('I confirm alert') do

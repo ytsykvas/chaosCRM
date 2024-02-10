@@ -2,12 +2,17 @@
 
 class CustomersController < ApplicationController
   require 'will_paginate/array'
-  before_action :authorise_user
+  before_action :index_authorise_user, only: %i[index]
+  before_action :show_authorise_user, only: %i[show]
 
   def index
     filtered_data = SearchService.new(User.visitors, params['visit_filter']).search(params.dig(:search, :query) || ' ')
     @customers = filtered_data.paginate(page: params[:page], per_page: 10)
     @customers_ids = SearchService.new(filtered_data).get_filtered_ids
+  end
+
+  def show
+    @customer = User.find(params[:id])
   end
 
   def download_xls
@@ -27,7 +32,11 @@ class CustomersController < ApplicationController
 
   private
 
-  def authorise_user
-    authorize :customers, :customers?
+  def index_authorise_user
+    authorize :customers, :index?
+  end
+
+  def show_authorise_user
+    authorize :customers, :show?
   end
 end
