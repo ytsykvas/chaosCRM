@@ -23,6 +23,14 @@ class User < ApplicationRecord
     account_type == 'admin'
   end
 
+  def employee?
+    account_type == 'employee'
+  end
+
+  def visitor?
+    account_type == 'visitor'
+  end
+
   private
 
   def normalize_phone_number
