@@ -43,7 +43,21 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     # toolbar (visitor)
     'visitor book visit': 'account.customer_navbar.book_visit',
     'visitor all visits': 'account.customer_navbar.all_visits',
-    'visitor left feedback': 'account.customer_navbar.left_feedback'
+    'visitor left feedback': 'account.customer_navbar.left_feedback',
+    # customers
+    'customers page title': 'customers.title',
+    'back button': 'basic.back',
+    'search customers': 'customers.search',
+    'search button': 'customers.search_submit',
+    'download XLS': 'customers.export',
+    'name': 'customers.table.name',
+    'phone': 'customers.table.phone',
+    'email': 'customers.table.email',
+    'last visit': 'customers.table.last_visit',
+    'never been customers button': 'customers.filter_buttons.have_not_visited',
+    'last visit later then month customers button': 'customers.filter_buttons.long_time_ago',
+    'skip filters button': 'customers.filter_buttons.skip_filters',
+    'can not visit customers': 'pundit.customers_policy.customers?'
   }.stringify_keys
   text = I18n.t(hash_of_i18n_keys.fetch(key))
   wait ||= Capybara.default_max_wait_time
@@ -67,5 +81,22 @@ Then(/^I (should|should not) see pagination$/) do |should_or_not|
     expect(page).to have_selector('.pagination')
   else
     expect(page).not_to have_selector('.pagination')
+  end
+end
+
+Then(/^I should see a table with (.*?) objects/) do |count|
+  expect(page).to have_css('.table-responsive table tbody tr', count:)
+end
+
+Then(/^I should receive a file with the name "(.*?)"/) do |filename|
+  download_path = Rails.root.join('tmp', 'downloads', filename)
+  wait_time = 1
+  max_attempts = 3
+  attempts = 0
+  found = false
+  until found || attempts >= max_attempts
+    sleep wait_time
+    found = File.exist?(download_path)
+    attempts += 1
   end
 end

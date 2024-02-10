@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   validates :email, presence: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
   validates :phone, presence: true, format: { with: /\A\+?\d{10,15}\z/ }
-  validates :first_name, presence: true, format: { with: /\A[\p{L}'][\p{L}'-]{0,14}\z/u }
-  validates :last_name, presence: true, format: { with: /\A[\p{L}'][\p{L}'-]{0,14}\z/u }
+  validates :first_name, presence: true, length: { maximum: 20 }
+  validates :last_name, presence: true, length: { maximum: 20 }
   validates :account_type, inclusion: { in: %w[visitor admin employee] }
 
   scope :visitors, -> { where(account_type: 'visitor') }

@@ -15,10 +15,14 @@
           td = customer.last_visit.present? ? customer.last_visit.to_date.to_s : t('customers.table.never')
   = link_to t('customers.filter_buttons.have_not_visited'),
           no_last_visit_customers_path,
-          class: 'btn btn-outline-dark d-block mt-2'
+          class: 'btn btn-outline-dark d-block mt-2',
+          data: { test_id: 'never_been_button' }
   = link_to t('customers.filter_buttons.long_time_ago'),
           old_last_visit_customers_path,
-          class: 'btn btn-outline-dark d-block mt-2'
-  = link_to t('customers.filter_buttons.skip_filters'), customers_path, class: 'btn btn-outline-primary d-block mt-2'
+          class: 'btn btn-outline-dark d-block mt-2',
+          data: { test_id: 'long_time_button' }
+  = link_to t('customers.filter_buttons.skip_filters'), customers_path,
+          class: 'btn btn-outline-primary d-block mt-2',
+          data: { test_id: 'skip_filters_button' }
 .pagination-centered
   = will_paginate @customers, renderer: BootstrapPagination::Rails

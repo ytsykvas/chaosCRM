@@ -14,8 +14,18 @@ Given(/^We register (.*?) user/) do |type|
   User.last.update!(account_type: 'employee') if type == 'employee'
 end
 
-# Given(/^We register a visitor$/) do
+Given(/^We have (.*?) customers/) do |number|
+  number.to_i.times { FactoryBot.create(:user) }
+end
 
-# end
+Given(/^The last customer have this phone number "(.*?)"/) do |number|
+  User.visitors.last.update(phone: number)
+end
 
-# When(/I visit (.*?) page/) do |page|
+Given(/^The last customer have this first name "(.*?)"/) do |name|
+  User.visitors.last.update(first_name: name)
+end
+
+Given(/^(.*?) customers used our service later then 1 month/) do |number|
+  User.visitors.limit(number.to_i).each { |user| user.update!(last_visit: 2.months.ago) }
+end

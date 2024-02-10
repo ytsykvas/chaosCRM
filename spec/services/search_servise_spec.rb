@@ -5,17 +5,17 @@ require 'rails_helper'
 RSpec.describe SearchService, type: :service do
   describe '#search' do
     let(:user1) do
-      create(:user,phone: '0504303352', last_visit: nil)
+      create(:user, phone: '0504303352', last_visit: nil)
     end
     let(:user2) do
       create(:user, first_name: 'ЮрійТест', phone: '0934303352', last_visit: 2.months.ago)
     end
     let(:user3) do
-      create(:user,phone: '0954303352', last_visit: 1.month.ago)
+      create(:user, phone: '0954303352', last_visit: 1.month.ago)
     end
 
     let(:user4) do
-      create(:user,phone: '0974303352', last_visit: 1.day.ago)
+      create(:user, phone: '0974303352', last_visit: 1.day.ago)
     end
 
     let(:users) { [user1, user2, user3] }
