@@ -3,6 +3,11 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
+  has_many :visits_as_customer, foreign_key: 'visitor_id', dependent: :destroy
+  has_many :visits_as_employee, class_name: 'Visit', foreign_key: 'employee_id', dependent: :nullify
+
+  has_one :user_setting, dependent: :destroy
+
   before_validation :normalize_phone_number, :normalize_name
 
   validates :email, presence: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
