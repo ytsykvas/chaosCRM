@@ -1,0 +1,25 @@
+h1 Останні записи клієнта:
+.table-responsive
+  table.table.table-bordered.mt-3
+    thead
+      tr
+        th = 'Дата запису'
+        th = 'Статус'
+        th = 'Послуги'
+        th = 'Майстер'
+        th = 'Gross'
+        th = 'Net'
+        th = 'Нараховано балів'
+        th = 'Використано балів'
+    tbody
+      - @customer.visits_as_customer.each do |visit|
+        - binding.irb
+        tr
+          td = visit.visit_date.to_date
+          td = visit.conclusion['status']
+          td = visit.conclusion['services']
+          td = visit.employee.full_name
+          td = visit.conclusion['gross']
+          td = visit.conclusion['net']
+          td = visit.conclusion['new_points']
+          td = visit.conclusion['used_points'].to_s

@@ -3,7 +3,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
-  has_many :visits_as_customer, foreign_key: 'visitor_id', dependent: :destroy
+  has_many :visits_as_customer, class_name: 'Visit', foreign_key: 'visitor_id', dependent: :destroy
   has_many :visits_as_employee, class_name: 'Visit', foreign_key: 'employee_id', dependent: :nullify
 
   has_one :user_setting, dependent: :destroy
