@@ -209,7 +209,6 @@ en:
     show:
       book_visit: "Reserve visit"
       edit: "Edit"
-      # bonuses: "Bonuses"
       statistic: "Statistic"
       block: "Ban visitor"
       visits_table:

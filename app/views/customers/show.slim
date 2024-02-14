@@ -11,7 +11,8 @@
       .row.mt-3
         = link_to t('customers.show.edit'), "#", class: 'btn btn-dark'
       .row.mt-3
-        = link_to t('customers.show.block'), "#", class: 'btn btn-danger'
+        - if current_user.admin?
+          = link_to t('customers.show.block'), "#", class: 'btn btn-danger'
   .col-8
     = render  "shared/customers/customer_data_table"
 .row.mt-3

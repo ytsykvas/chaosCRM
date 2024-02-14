@@ -59,7 +59,7 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     'never been customers button': 'customers.filter_buttons.have_not_visited',
     'last visit later then month customers button': 'customers.filter_buttons.long_time_ago',
     'skip filters button': 'customers.filter_buttons.skip_filters',
-    'can not visit customers': 'pundit.customers_policy.customers?',
+    'can not visit customers': 'pundit.customers_policy.index?',
     # customer
     'book visit for customer': 'customers.show.book_visit',
     'customer statistic': 'customers.show.statistic',

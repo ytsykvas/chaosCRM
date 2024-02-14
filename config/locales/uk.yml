@@ -209,7 +209,6 @@ uk:
     show:
       book_visit: "Записати візит"
       edit: "Редагувати"
-      # bonuses: "Бонуси"
       statistic: "Статистика"
       block: "Забанити клієнта"
       visits_table:
