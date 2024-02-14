@@ -11,7 +11,7 @@ Feature: User can visit customer info page
     And I should see the text: email
     And I should see the text: last visit
     And I should see the text: book visit for customer
-    And I should see the text: customer bonuses
+    And I should see the text: customer statistic
     And I should see the text: edit customer
     And I should see the text: block customer
 
@@ -26,7 +26,7 @@ Feature: User can visit customer info page
     And I should see the text: email
     And I should see the text: last visit
     And I should see the text: book visit for customer
-    And I should see the text: customer bonuses
+    And I should see the text: customer statistic
     And I should see the text: edit customer
     And I should see the text: block customer
 
@@ -39,6 +39,6 @@ Feature: User can visit customer info page
     And I should not see the text: name
     And I should not see the text: phone
     And I should not see the text: book visit for customer
-    And I should not see the text: customer bonuses
+    And I should not see the text: customer statistic
     And I should not see the text: edit customer
     And I should not see the text: block customer

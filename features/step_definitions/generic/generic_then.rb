@@ -62,7 +62,7 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     'can not visit customers': 'pundit.customers_policy.customers?',
     # customer
     'book visit for customer': 'customers.show.book_visit',
-    'customer bonuses': 'customers.show.bonuses',
+    'customer statistic': 'customers.show.statistic',
     'edit customer': 'customers.show.edit',
     'block customer': 'customers.show.block',
     'visitor can not visit customer page': 'pundit.customers_policy.show?'

@@ -7,7 +7,7 @@
       .row.mt-3
         = link_to t('customers.show.book_visit'), "#", class: 'btn btn-dark'
       .row.mt-3
-        = link_to t('customers.show.bonuses'), "#", class: 'btn btn-dark'
+        = link_to t('customers.show.statistic'), "#", class: 'btn btn-dark'
       .row.mt-3
         = link_to t('customers.show.edit'), "#", class: 'btn btn-dark'
       .row.mt-3
@@ -15,4 +15,4 @@
   .col-8
     = render  "shared/customers/customer_data_table"
 .row.mt-3
-  = render "shared/customers/customer_visits_table"
+  = render "shared/customers/customer_visits_table" if @visits.present?

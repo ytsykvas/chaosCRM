@@ -1,16 +1,16 @@
-h1 Останні записи клієнта:
+h1 = t('customers.show.visits_table.title')
 .table-responsive
   table.table.table-bordered.mt-3
     thead
       tr
-        th = 'Дата запису'
-        th = 'Статус'
-        th = 'Послуги'
-        th = 'Майстер'
-        th = 'Gross'
-        th = 'Net'
-        th = 'Нараховано балів'
-        th = 'Використано балів'
+        th = t('customers.show.visits_table.visit_date')
+        th = t('customers.show.visits_table.status')
+        th = t('customers.show.visits_table.services')
+        th = t('customers.show.visits_table.employee')
+        th = t('customers.show.visits_table.gross')
+        th = t('customers.show.visits_table.net')
+        th = t('customers.show.visits_table.new_points')
+        th = t('customers.show.visits_table.used_points')
     tbody
       - @visits.each do |visit|
         tr

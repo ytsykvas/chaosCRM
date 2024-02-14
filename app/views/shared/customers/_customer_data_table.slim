@@ -11,5 +11,11 @@
         td = t('customers.table.phone')
         td = @customer.phone
       tr 
+        td = t('customers.table.points')
+        td = @customer.points
+      tr 
+        td = t('customers.table.total_visits')
+        td = @visits.includes(:conclusion).count
+      tr 
         td = t('customers.table.last_visit')
         td = @customer.last_visit.present? ?  @customer.last_visit : t('customers.table.never')

@@ -200,6 +200,8 @@ en:
       email: "Email"
       last_visit: "Last visit"
       never: "Never"
+      points: "Total points"
+      total_visits: "Total visits"
     filter_buttons:
       have_not_visited: "Have no visited"
       long_time_ago: "Long time ago"
@@ -207,6 +209,16 @@ en:
     show:
       book_visit: "Reserve visit"
       edit: "Edit"
-      bonuses: "Bonuses"
+      # bonuses: "Bonuses"
+      statistic: "Statistic"
       block: "Ban visitor"
-
+      visits_table:
+        title: "Last visits:"
+        visit_date: "Visit date"
+        status: "Status"
+        services: "Services"
+        employee: "Employee"
+        gross: "Gross"
+        net: "Net"
+        new_points: "New points"
+        used_points: "Used points"

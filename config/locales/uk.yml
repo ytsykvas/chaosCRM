@@ -200,6 +200,8 @@ uk:
       email: "Пошта"
       last_visit: "Останній запис"
       never: "Ніколи"
+      points: "Баланс бонусів"
+      total_visits: "Всього візитів"
     filter_buttons:
       have_not_visited: "Ніразу не записувався"
       long_time_ago: "Був давно"
@@ -207,5 +209,16 @@ uk:
     show:
       book_visit: "Записати візит"
       edit: "Редагувати"
-      bonuses: "Бонуси"
+      # bonuses: "Бонуси"
+      statistic: "Статистика"
       block: "Забанити клієнта"
+      visits_table:
+        title: "Останні записи клієнта:"
+        visit_date: "Дата запису"
+        status: "Статус"
+        services: "Послуги"
+        employee: "Майстер"
+        gross: "Gross"
+        net: "Net"
+        new_points: "Нараховано балів"
+        used_points: "Використано балів"
