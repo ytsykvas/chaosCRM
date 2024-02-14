@@ -7,7 +7,7 @@ RSpec.describe CustomersPolicy, type: :policy do
 
   subject { described_class }
 
-  permissions :customers? do
+  permissions :index? do
     it 'grants access to admin users' do
       user.update!(account_type: 'admin')
       expect(subject).to permit(user)
