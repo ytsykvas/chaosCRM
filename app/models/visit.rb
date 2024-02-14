@@ -7,4 +7,6 @@ class Visit < ApplicationRecord
   enum payment_status: { delayed: 0, finished: 1 }
 
   validates :visitor, :employee, :payment_status, :visit_date, presence: true
+
+  scope :with_conclusion, -> { where.not(conclusion: nil) }
 end

@@ -18,4 +18,4 @@
         td = @visits.includes(:conclusion).count
       tr 
         td = t('customers.table.last_visit')
-        td = @customer.last_visit.present? ?  @customer.last_visit : t('customers.table.never')
+        td = @customer.last_visit.present? ? @customer.last_visit.to_date : t('customers.table.never')
