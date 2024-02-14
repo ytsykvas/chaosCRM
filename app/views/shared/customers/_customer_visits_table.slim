@@ -12,8 +12,7 @@ h1 Останні записи клієнта:
         th = 'Нараховано балів'
         th = 'Використано балів'
     tbody
-      - @customer.visits_as_customer.each do |visit|
-        - binding.irb
+      - @visits.each do |visit|
         tr
           td = visit.visit_date.to_date
           td = visit.conclusion['status']
@@ -23,3 +22,5 @@ h1 Останні записи клієнта:
           td = visit.conclusion['net']
           td = visit.conclusion['new_points']
           td = visit.conclusion['used_points'].to_s
+.pagination-centered
+  = will_paginate @visits, renderer: BootstrapPagination::Rails

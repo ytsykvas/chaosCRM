@@ -46,6 +46,7 @@ end
 
 group :development do
   gem 'web-console'
+  gem 'bullet'
 end
 
 group :test do

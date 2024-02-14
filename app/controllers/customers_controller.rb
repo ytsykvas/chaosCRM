@@ -13,6 +13,7 @@ class CustomersController < ApplicationController
 
   def show
     @customer = User.find(params[:id])
+    @visits = @customer.visits_as_customer.includes(:employee).paginate(page: params[:page], per_page: 10)
   end
 
   def download_xls
