@@ -3,7 +3,7 @@
 class CustomersPolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     def resolve
-      raise Pundit::NotDefinedError, 'You cannot see this page. You are not an admin.'
+      raise Pundit::NotDefinedError, 'You cannot see this page'
     end
   end
 

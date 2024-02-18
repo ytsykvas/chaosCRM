@@ -12,4 +12,4 @@
           download_xls_customers_path(@customers_ids),
           class: 'btn btn-outline-dark',
           data: { test_id: 'download_xls_button' }
-= render "shared/customers/customers_table"
+= render Customer::Component::Table::CustomersTable.new(@customers)

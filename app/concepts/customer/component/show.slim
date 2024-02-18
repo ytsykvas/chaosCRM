@@ -11,9 +11,9 @@
       .row.mt-3
         = link_to t('customers.show.edit'), "#", class: 'btn btn-dark'
       .row.mt-3
-        - if current_user.admin?
+        - if @user.admin?
           = link_to t('customers.show.block'), "#", class: 'btn btn-danger'
   .col-8
-    = render  "shared/customers/customer_data_table"
+    = render Customer::Component::Table::CustomerDataTable.new(@customer, @visits)
 .row.mt-3
-  = render "shared/customers/customer_visits_table" if @visits.present?
+  = render Customer::Component::Table::CustomerVisitsTable.new(@visits) if @visits.present?

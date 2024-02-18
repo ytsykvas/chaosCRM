@@ -1,17 +1,13 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
-  before_action :authorise_user, only: :profile
+  skip_before_action :authenticate_user!, only: %i[index]
 
-  def index; end
-
-  def profile
-    @user = current_user if current_user.present?
+  def index
+    render Page::Component::Index.new
   end
 
-  private
-
-  def authorise_user
-    authorize :pages, :profile?
+  def profile
+    endpoint Page::Operation::Profile, Page::Component::Profile
   end
 end

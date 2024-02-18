@@ -2,8 +2,11 @@
 
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
+  include OperationsMethods
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!
+  helper_method :current_user, :logged_in?
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -17,6 +20,10 @@ class ApplicationController < ActionController::Base
     I18n.default_locale = :uk
 
     redirect_back(fallback_location: root_path)
+  end
+
+  def logged_in?
+    !!current_user
   end
 
   protected

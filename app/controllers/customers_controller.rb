@@ -1,22 +1,12 @@
 # frozen_string_literal: true
 
 class CustomersController < ApplicationController
-  require 'will_paginate/array'
-  before_action :index_authorise_user, only: %i[index]
-  before_action :show_authorise_user, only: %i[show]
-
   def index
-    filtered_data = SearchService.new(User.visitors, params['visit_filter']).search(params.dig(:search, :query) || ' ')
-    @customers = filtered_data.paginate(page: params[:page], per_page: 10)
-    @customers_ids = SearchService.new(filtered_data).get_filtered_ids
+    endpoint Customer::Operation::Index, Customer::Component::Index
   end
 
   def show
-    @customer = User.find(params[:id])
-    @visits = @customer.visits_as_customer
-                       .includes(:employee)
-                       .order(created_at: :desc)
-                       .paginate(page: params[:page], per_page: 10)
+    endpoint Customer::Operation::Show, Customer::Component::Show
   end
 
   def download_xls
@@ -32,15 +22,5 @@ class CustomersController < ApplicationController
   def old_last_visit
     query = { visit_filter: 'LastVisitOverMonth' }
     redirect_to customers_path(query)
-  end
-
-  private
-
-  def index_authorise_user
-    authorize :customers, :index?
-  end
-
-  def show_authorise_user
-    authorize :customers, :show?
   end
 end

@@ -28,6 +28,10 @@ gem 'view_component'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'will_paginate-bootstrap4'
+gem 'prettier_print'
+gem 'syntax_tree'
+gem 'syntax_tree-haml'
+gem 'syntax_tree-rbs'
 
 group :development, :test do
   gem 'capybara-selenium' # MIT-License
@@ -39,14 +43,14 @@ group :development, :test do
   gem 'faker'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 6.1.0'
-  gem 'rubocop', require: false
+  # gem 'rubocop', require: false
   gem 'selenium-webdriver' # Adds support for Capybara system testing and selenium driver
   gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
-  gem 'web-console'
   gem 'bullet'
+  gem 'web-console'
 end
 
 group :test do

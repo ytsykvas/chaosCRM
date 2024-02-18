@@ -41,4 +41,4 @@ Feature: User can visit customers page
 
   Scenario: Not signed user can`t visit customers page
     And I visit customers page
-    Then I should see the text: can not visit customers
+    Then I should see the text: sign in to continue
