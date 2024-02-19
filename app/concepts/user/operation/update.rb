@@ -3,7 +3,7 @@
 class User::Operation::Update < Operation::Base
   def perform!(user:, params:)
     authorize!(:users, :update?)
-    binding.irb
+
     update_user(params)
   end
 
