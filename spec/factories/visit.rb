@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :visit do
-    association :visitor, factory: :user
-    association :employee, factory: :user
+    association :visitor, factory: :user, account_type: 'visitor'
+    association :employee, factory: :user, account_type: 'employee'
     payment_status { 0 }
     visit_date { Faker::Time.backward(days: 14) }
     comment { Faker::Lorem.sentence }
