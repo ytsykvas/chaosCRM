@@ -14,13 +14,6 @@ class User::Operation::Update < Operation::Base
   end
 
   def params_to_update(params)
-    update_params = {}
-    update_params[:first_name] = params['user']['first_name'] if params['user']['first_name'].present?
-    update_params[:last_name] = params['user']['last_name'] if params['user']['last_name'].present?
-    update_params[:phone] = params['user']['phone'] if params['user']['phone'].present?
-    update_params[:email] = params['user']['email'] if params['user']['email'].present?
-    update_params[:account_type] = params['user']['account_type'].presence if params['user']['account_type'].present?
-
-    update_params
+    params.require(:user).permit(:first_name, :last_name, :phone, :email, :account_type).to_h
   end
 end
