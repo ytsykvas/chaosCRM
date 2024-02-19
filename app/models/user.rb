@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   before_validation :normalize_phone_number, :normalize_name
 
-  validates :email, presence: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
+  validates :email, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
   validates :phone, presence: true, format: { with: /\A\+?\d{10,15}\z/ }
   validates :first_name, presence: true, length: { maximum: 20 }
   validates :last_name, presence: true, length: { maximum: 20 }

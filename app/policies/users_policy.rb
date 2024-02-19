@@ -1,21 +1,13 @@
 # frozen_string_literal: true
 
-class CustomersPolicy < ApplicationPolicy
+class UsersPolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     def resolve
       raise Pundit::NotDefinedError, 'You cannot see this page'
     end
   end
 
-  def index?
-    user&.admin?
-  end
-
-  def show?
-    user&.admin? || user&.employee?
-  end
-
-  def edit?
+  def update?
     user&.admin?
   end
 end

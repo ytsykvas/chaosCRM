@@ -8,6 +8,8 @@ en:
       show?: 'Ony admin or employee can see this page.'
     pages_policy:
       profile?: 'You should sign in to see your profile.'
+    users_policy:
+      update?: 'Only admin can update user`s data.'
   devise:
     confirmations:
       new:
@@ -78,7 +80,7 @@ en:
       new:
         title: "New user:"
         first_name: "Name"
-        second_name: "Прізвище"
+        second_name: "Second name"
         email: "Email"
         phone: "Phone number"
         company_name: "Company name"
@@ -221,3 +223,12 @@ en:
         net: "Net"
         new_points: "New points"
         used_points: "Used points"
+    edit:
+      title: "Edit vistitor"
+      success_update: "User`s data was updated successfully."
+      error_update: "Error while updating user`s data."
+      type: "Account type"
+      account_types:
+        admin: 'Admin'
+        employee: 'Employee'
+        visitor: 'Visitor'

@@ -1,0 +1,22 @@
+.d-flex.justify-content-between.align-items-center
+  h1 = t('customers.edit.title')
+  = link_to t('basic.back'), customer_path(@customer), class: 'btn btn-secondary'
+= simple_form_for @customer do |f|
+  .form-inputs
+    .row
+      .col
+        = f.input :first_name, label: t('devise.registrations.new.first_name')
+      .col
+        = f.input :last_name, label: t('devise.registrations.new.second_name')
+    .row
+      .col
+        = f.input :phone, label: t('devise.registrations.new.phone')
+      .col
+        = f.input :email, label: t('devise.registrations.new.email')
+    .row
+      .col
+        = f.label t('customers.edit.type')
+    .row 
+      .col.mt-1
+        = f.select :account_type, options_for_select(account_types.invert, 'visitor')
+    = f.button :submit, t('devise.registrations.edit.update'), class: "btn btn-dark mt-3"  

@@ -9,6 +9,10 @@ class CustomersController < ApplicationController
     endpoint Customer::Operation::Show, Customer::Component::Show
   end
 
+  def edit
+    endpoint Customer::Operation::Edit, Customer::Component::Edit
+  end
+
   def download_xls
     excel_generator = Customers::ExportXls.new(params['format'])
     send_file excel_generator.generate_excel, type: 'application/vnd.ms-excel', filename: 'AllCustomers.xls'
