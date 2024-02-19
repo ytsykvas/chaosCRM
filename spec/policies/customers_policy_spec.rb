@@ -17,4 +17,31 @@ RSpec.describe CustomersPolicy, type: :policy do
       expect(subject).not_to permit(user)
     end
   end
+
+  permissions :show? do
+    it 'grants access to admin users' do
+      user.update!(account_type: 'admin')
+      expect(subject).to permit(user)
+    end
+
+    it 'grants access to employee users' do
+      user.update!(account_type: 'employee')
+      expect(subject).to permit(user)
+    end
+
+    it 'denies access to non-admin users' do
+      expect(subject).not_to permit(user)
+    end
+  end
+
+  permissions :edit? do
+    it 'grants access to admin users' do
+      user.update!(account_type: 'admin')
+      expect(subject).to permit(user)
+    end
+
+    it 'denies access to non-admin users' do
+      expect(subject).not_to permit(user)
+    end
+  end
 end
