@@ -57,7 +57,7 @@ class SearchService
   end
 
   def no_last_visit
-    @data = @data.select { |customer| !customer.visited? }
+    @data = @data.reject(&:visited?)
   end
 
   def banned_customers
