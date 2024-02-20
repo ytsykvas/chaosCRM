@@ -31,4 +31,9 @@ class CustomersController < ApplicationController
     query = { visit_filter: 'LastVisitOverMonth' }
     redirect_to customers_path(query)
   end
+
+  def blocked_customers
+    query = { visit_filter: 'banned' }
+    redirect_to customers_path(query)
+  end
 end

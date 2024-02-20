@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_one :user_setting, dependent: :destroy
 
+  after_create :create_user_setting
   before_validation :normalize_phone_number, :normalize_name
 
   validates :email, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
@@ -19,6 +20,7 @@ class User < ApplicationRecord
   scope :visitors, -> { where(account_type: 'visitor') }
   scope :admins, -> { where(account_type: 'admin') }
   scope :employees, -> { where(account_type: 'employee') }
+  scope :banned, -> { joins(:user_setting).where(user_settings: { status: :banned }) }
 
   def full_name
     "#{first_name} #{last_name}"
@@ -36,6 +38,14 @@ class User < ApplicationRecord
     account_type == 'visitor'
   end
 
+  def visited?
+    last_visit.present?
+  end
+
+  def banned?
+    user_setting.present? && user_setting.status == 'banned'
+  end
+
   private
 
   def normalize_phone_number
@@ -45,5 +55,9 @@ class User < ApplicationRecord
   def normalize_name
     self.first_name = first_name.downcase.capitalize if first_name.present?
     self.last_name = last_name.downcase.capitalize if last_name.present?
+  end
+
+  def create_user_setting
+    build_user_setting.save
   end
 end

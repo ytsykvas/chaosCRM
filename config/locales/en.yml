@@ -207,6 +207,7 @@ en:
     filter_buttons:
       have_not_visited: "Have no visited"
       long_time_ago: "Long time ago"
+      blocked_users: "Baned customers"
       skip_filters: "Skip filters"
     show:
       book_visit: "Reserve visit"

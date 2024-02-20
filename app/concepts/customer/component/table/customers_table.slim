@@ -21,6 +21,9 @@
           old_last_visit_customers_path,
           class: 'btn btn-outline-dark d-block mt-2',
           data: { test_id: 'long_time_button' }
+  = link_to t('customers.filter_buttons.blocked_users'), blocked_customers_path,
+          class: 'btn btn-outline-danger d-block mt-2',
+          data: { test_id: 'blocked_users_filter_button' }
   = link_to t('customers.filter_buttons.skip_filters'), customers_path,
           class: 'btn btn-outline-primary d-block mt-2',
           data: { test_id: 'skip_filters_button' }

@@ -207,6 +207,7 @@ uk:
     filter_buttons:
       have_not_visited: "Ніразу не записувався"
       long_time_ago: "Був давно"
+      blocked_users: "Забанені клієнти"
       skip_filters: "Скинути фільтри"
     show:
       book_visit: "Записати візит"

@@ -2,7 +2,6 @@
 
 class Customer::Component::Block < ViewComponent::Base
   def initialize(model:)
-    # binding.irb
     @setting = model[:setting]
   end
 end

@@ -11,6 +11,7 @@ class SearchService
 
     old_last_visit if @visit == 'LastVisitOverMonth'
     no_last_visit if @visit == 'NoLastVisit'
+    banned_customers if @visit == 'banned'
 
     terms = parse_query(query)
 
@@ -37,9 +38,10 @@ class SearchService
       relevance += 5 if entry.first_name.to_s.downcase.include?(term) ||
                         entry.last_name.to_s.downcase.include?(term) ||
                         entry.phone.to_s.include?(term)
-      relevance += 2 if entry.email.to_s.downcase.include?(term)
-      relevance += 1 if @visit == 'NoLastVisit' && entry.last_visit.nil? ||
+      relevance += 3 if entry.email.to_s.downcase.include?(term)
+      relevance += 2 if @visit == 'NoLastVisit' && entry.last_visit.nil? ||
                         @visit == 'LastVisitOverMonth' && entry.last_visit.present? && entry.last_visit < 1.month.ago
+      relevance += 1 if @visit == 'banned' && entry.banned?
 
       break if relevance.zero?
     end
@@ -51,10 +53,14 @@ class SearchService
   end
 
   def old_last_visit
-    @data = @data.select { |customer| customer.last_visit.present? && customer.last_visit < 1.month.ago }
+    @data = @data.select { |customer| customer.visited? && customer.last_visit < 1.month.ago }
   end
 
   def no_last_visit
-    @data = @data.select { |customer| customer.last_visit.nil? }
+    @data = @data.select { |customer| !customer.visited? }
+  end
+
+  def banned_customers
+    @data = @data.banned
   end
 end
