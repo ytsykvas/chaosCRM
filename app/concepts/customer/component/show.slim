@@ -3,7 +3,7 @@
   = link_to t('basic.back'), customers_path, class: 'btn btn-secondary'
 - if @account_status == 'banned'
   .alert.alert-danger
-    p = t('customers.show.block') 
+    p = t('customers.show.visitor_blocked') 
     p = t('customers.show.block reason', reason: @customer.user_setting.comment)
 .row
   .col-4.text-center
