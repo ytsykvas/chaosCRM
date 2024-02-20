@@ -15,7 +15,7 @@
       .row.mt-3
         = link_to t('customers.show.edit'), edit_customer_path, class: 'btn btn-dark'
       .row.mt-3
-        - if @user.admin? && @account_status == 'active'
+        - if (@user.admin? && @account_status == 'active') || (@user.admin? && @account_status == nil)
           = link_to t('customers.show.block'), block_customer_path, class: 'btn btn-danger'
         - elsif @user.admin? && @account_status == 'banned'
           = link_to t('customers.show.turn_off_block'), unblock_customer_user_setting_path(@customer), method: :put, class: 'btn btn-success'
