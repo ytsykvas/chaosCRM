@@ -1,0 +1,19 @@
+.d-flex.justify-content-between.align-items-center
+  h1 = t('customers.block.title')
+  = link_to t('basic.back'), customer_path(@setting.user), class: 'btn btn-secondary'
+h4 = @setting.user.full_name
+= simple_form_for @setting, url: block_customer_user_setting_path, method: :put do |f|
+  = f.hidden_field :user_id, value: @setting.user.id
+  .form-group
+    .row
+      .col
+        = f.label 'Опишіть причину:'
+    .row
+      .col
+        = f.text_area :comment, rows: '5', class: 'form-control mt-2'
+      .col 
+        p = t('customers.block.hint')
+        p = t('customers.block.you_can_turn_off_ban')
+    .row
+      .col
+        = f.button :submit, 'BLOCK', class: "btn btn-dark mt-3"

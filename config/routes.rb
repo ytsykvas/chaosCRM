@@ -11,10 +11,18 @@ Rails.application.routes.draw do
   resources :customers, only: %i[index show edit] do
     collection do
       get 'index', to: 'customers#index'
+      # get 'block_customer_page'
       get 'no_last_visit', to: 'customers#no_last_visit'
       get 'old_last_visit', to: 'customers#old_last_visit'
       get 'download_xls', to: 'customers#download_xls'
     end
+    member do
+      get 'block'
+    end
+  end
+  resource :user_setting, only: [:index] do
+    put 'block_customer', on: :member
+    put 'unblock_customer', on: :member
   end
   get '/profile', to: 'pages#profile'
 end

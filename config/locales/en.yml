@@ -213,6 +213,10 @@ en:
       edit: "Edit"
       statistic: "Statistic"
       block: "Ban visitor"
+      turn_off_block: "Make account active"
+      no_visits: "Don`t have visits yet."
+      visitor_blocked: "This visitor is baned."
+      block reason: "The reason: %{reason}"
       visits_table:
         title: "Last visits:"
         visit_date: "Visit date"
@@ -232,3 +236,9 @@ en:
         admin: 'Admin'
         employee: 'Employee'
         visitor: 'Visitor'
+    block:
+      title: "Block user"
+      hint: "This action will not allow this user to sign up for any services at the beauty salon."
+      you_can_turn_off_ban: "You can unblock this user later on the same page."
+      success_notice: "Visitor is blocked successfuly."
+      error_alert: "Error while blocking visitor."

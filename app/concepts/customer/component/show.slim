@@ -1,6 +1,10 @@
 .d-flex.justify-content-between.align-items-center
   h1 = @customer.full_name
   = link_to t('basic.back'), customers_path, class: 'btn btn-secondary'
+- if @account_status == 'banned'
+  .alert.alert-danger
+    p = t('customers.show.block') 
+    p = t('customers.show.block reason', reason: @customer.user_setting.comment)
 .row
   .col-4.text-center
     .container
@@ -11,9 +15,15 @@
       .row.mt-3
         = link_to t('customers.show.edit'), edit_customer_path, class: 'btn btn-dark'
       .row.mt-3
-        - if @user.admin?
-          = link_to t('customers.show.block'), "#", class: 'btn btn-danger'
+        - if @user.admin? && @account_status == 'active'
+          = link_to t('customers.show.block'), block_customer_path, class: 'btn btn-danger'
+        - elsif @user.admin? && @account_status == 'banned'
+          = link_to t('customers.show.turn_off_block'), unblock_customer_user_setting_path(@customer), method: :put, class: 'btn btn-success'
   .col-8
     = render Customer::Component::Table::CustomerDataTable.new(@customer, @visits)
 .row.mt-3
-  = render Customer::Component::Table::CustomerVisitsTable.new(@visits) if @visits.present?
+  - if @visits.present?
+    = render Customer::Component::Table::CustomerVisitsTable.new(@visits)
+  - else
+    .container.text-center
+      h1 = t('customers.show.no_visits')

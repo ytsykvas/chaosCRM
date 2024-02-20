@@ -5,5 +5,6 @@ class Customer::Component::Show < ViewComponent::Base
     @user = model[:user]
     @customer = model[:customer]
     @visits = model[:visits]
+    @account_status = @customer.user_setting.status
   end
 end
