@@ -239,7 +239,13 @@ en:
         visitor: 'Visitor'
     block:
       title: "Block user"
+      label: "Enter a ban reason:"
       hint: "This action will not allow this user to sign up for any services at the beauty salon."
       you_can_turn_off_ban: "You can unblock this user later on the same page."
       success_notice: "Visitor is blocked successfuly."
-      error_alert: "Error while blocking visitor."
+      error_alert: "Error while blocking visitor. %{error}"
+      submit: "Block"
+      error_blank_comment: "Comment to ban can not be blank."
+    unblock:
+      success_notice: "Customer is banned successfuly"
+      error_alert: "Error while blocking customer."

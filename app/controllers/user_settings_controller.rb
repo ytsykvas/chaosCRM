@@ -2,7 +2,8 @@ class UserSettingsController < ApplicationController
   def block_customer
     endpoint UserSetting::Operation::BlockCustomer do |result|
       if result.errors.present?
-        redirect_to customer_path(params['user_setting']['user_id']), alert: t('customers.block.error_alert')
+        redirect_to customer_path(params['user_setting']['user_id']),
+                    alert: t('customers.block.error_alert', error: result.errors.first.attribute.to_s)
       else
         redirect_to customer_path(params['user_setting']['user_id']), notice: t('customers.block.success_notice')
       end

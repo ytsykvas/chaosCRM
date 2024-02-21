@@ -12,6 +12,10 @@ class UserSetting::Operation::BlockCustomer < Operation::Base
   def update_user_settings(params)
     comment = params['user_setting']['comment']
     user = params['user_setting']['user_id']
-    User.find(user).user_setting.update!(status: 1, comment: comment.strip) if comment.present?
+    if comment.present?
+      User.find(user).user_setting.update!(status: 1, comment: comment.strip)
+    else
+      result.errors.add(I18n.t('customers.block.error_blank_comment'))
+    end
   end
 end
