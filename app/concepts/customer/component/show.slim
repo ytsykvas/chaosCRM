@@ -1,6 +1,4 @@
-.d-flex.justify-content-between.align-items-center
-  h1 = @customer.full_name
-  = link_to t('basic.back'), customers_path, class: 'btn btn-secondary'
+= render Component::TitleBack.new(title: "#{@customer.full_name}", back_path: customers_path)
 - if @account_status == 'banned'
   .alert.alert-danger
     p = t('customers.show.visitor_blocked') 

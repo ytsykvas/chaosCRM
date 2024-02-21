@@ -1,6 +1,4 @@
-.d-flex.justify-content-between.align-items-center
-  h1 = t('customers.edit.title')
-  = link_to t('basic.back'), customer_path(@customer), class: 'btn btn-secondary'
+= render Component::TitleBack.new(title: t('customers.edit.title'), back_path: customer_path(@customer))
 = simple_form_for @customer do |f|
   .form-inputs
     .row

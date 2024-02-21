@@ -1,6 +1,4 @@
-.d-flex.justify-content-between.align-items-center
-  h1 = t('customers.block.title')
-  = link_to t('basic.back'), customer_path(@setting.user), class: 'btn btn-secondary'
+= render Component::TitleBack.new(title: t('customers.block.title'), back_path: customer_path(@setting.user))
 h4 = @setting.user.full_name
 = simple_form_for @setting, url: block_customer_user_setting_path, method: :put do |f|
   = f.hidden_field :user_id, value: @setting.user.id
