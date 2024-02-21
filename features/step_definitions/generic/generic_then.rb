@@ -18,11 +18,11 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     'Signed out': 'devise.sessions.already_signed_out',
     # navbar
     'main page': 'navbar.index',
-    services: 'navbar.services',
-    masters: 'navbar.masters',
-    reserve: 'navbar.reserve',
+    'services': 'navbar.services',
+    'masters': 'navbar.masters',
+    'reserve': 'navbar.reserve',
     'contacts page': 'navbar.contacts',
-    my_account: 'navbar.my_account',
+    'my_account': 'navbar.my_account',
     'log in': 'navbar.enter',
     'log out': 'navbar.exit',
     'my page': 'navbar.my_account',
@@ -115,4 +115,6 @@ Then(/^I should receive a file with the name "(.*?)"/) do |filename|
     found = File.exist?(download_path)
     attempts += 1
   end
+
+  File.delete('customers.xls') if File.exist?('customers.xls')
 end
