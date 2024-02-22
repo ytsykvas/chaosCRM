@@ -83,8 +83,6 @@ uk:
         second_name: "Прізвище"
         email: "Електронна пошта"
         phone: "Номер телефону"
-        company_name: "Назва компанії"
-        user_type: "Постачальник або продавець"
         password: "Пароль"
         six_or_more: "%{number} символів мінімум"
         password_hint: "Придумайте надійний пароль"

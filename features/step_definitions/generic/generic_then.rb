@@ -16,6 +16,10 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     'signed in alert': 'devise.sessions.signed_in',
     'forgot password': 'devise.shared_links.forgot_password',
     'Signed out': 'devise.sessions.already_signed_out',
+    # Registration
+    'first name label': 'devise.registrations.new.first_name',
+    'second name label': 'devise.registrations.new.second_name',
+    'phone label': 'devise.registrations.new.phone',
     # navbar
     'main page': 'navbar.index',
     'services': 'navbar.services',
@@ -66,7 +70,23 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     'customer statistic': 'customers.show.statistic',
     'edit customer': 'customers.show.edit',
     'block customer': 'customers.show.block',
-    'visitor can not visit customer page': 'pundit.customers_policy.show?'
+    'visitor can not visit customer page': 'pundit.customers_policy.show?',
+    'no last visits': 'customers.show.no_visits',
+    # edit customer
+    'edit customer title': 'customers.edit.title',
+    'user type label': 'customers.edit.type',
+    # block customer
+    'block customer title': 'customers.block.title',
+    'ban user hint': 'customers.block.hint',
+    'unban user hint': 'customers.block.you_can_turn_off_ban',
+    'success block notice': 'customers.block.success_notice',
+    'blocked user alert title': 'customers.show.visitor_blocked',
+    'block error alert': 'customers.block.error_blank_comment',
+    'unblock button': 'customers.show.turn_off_block',
+    'success unblock notice': 'customers.unblock.success_notice',
+    # edit customer
+    'successfull user update': 'customers.edit.success_update',
+    'error while updating user': 'customers.edit.error_update'
   }.stringify_keys
   text = I18n.t(hash_of_i18n_keys.fetch(key))
   wait ||= Capybara.default_max_wait_time

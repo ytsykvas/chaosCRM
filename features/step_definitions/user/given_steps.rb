@@ -10,8 +10,7 @@ Given(/^We register (.*?) user/) do |type|
   find("[data-test-id='password-input']").fill_in(with: 'blink182')
   find("[data-test-id='password-confirmation-input']").fill_in(with: 'blink182')
   find('input[type="submit"]').click
-  User.last.update!(account_type: 'admin') if type == 'admin'
-  User.last.update!(account_type: 'employee') if type == 'employee'
+  User.last.update!(account_type: type)
 end
 
 Given(/^We have (.*?) customers/) do |number|

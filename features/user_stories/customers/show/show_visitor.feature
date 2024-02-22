@@ -14,6 +14,7 @@ Feature: User can visit customer info page
     And I should see the text: customer statistic
     And I should see the text: edit customer
     And I should see the text: block customer
+    And I should see the text: no last visits
 
   Scenario: Employee can visit and see customer information
     Given We have 2 customers
@@ -27,9 +28,8 @@ Feature: User can visit customer info page
     And I should see the text: last visit
     And I should see the text: book visit for customer
     And I should see the text: customer statistic
-    And I should see the text: edit customer
     And I should not see the text: block customer
-
+    And I should see the text: no last visits
 
   Scenario: Visitor can not visit and see customer information
     Given We have 2 customers

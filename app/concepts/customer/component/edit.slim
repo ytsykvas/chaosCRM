@@ -3,18 +3,29 @@
   .form-inputs
     .row
       .col
-        = f.input :first_name, label: t('devise.registrations.new.first_name')
+        = f.input :first_name,
+                label: t('devise.registrations.new.first_name'),
+                input_html: { data: { test_id: 'first-name-input' } }
+
       .col
-        = f.input :last_name, label: t('devise.registrations.new.second_name')
+        = f.input :last_name,
+                label: t('devise.registrations.new.second_name'),
+                input_html: { data: { test_id: 'last-name-input' } }
     .row
       .col
-        = f.input :phone, label: t('devise.registrations.new.phone')
+        = f.input :phone,
+                label: t('devise.registrations.new.phone'),
+                input_html: { data: { test_id: 'phone-input' } }
       .col
-        = f.input :email, label: t('devise.registrations.new.email')
+        = f.input :email,
+                label: t('devise.registrations.new.email'),
+                input_html: { data: { test_id: 'email-input' } }
     .row
       .col
         = f.label t('customers.edit.type')
     .row 
       .col.mt-1
-        = f.select :account_type, options_for_select(account_types.invert, 'visitor')
+        = f.select :account_type,
+                options_for_select(account_types.invert, 'visitor'),
+                input_html: { data: { test_id: 'account-type-selector' } }
     = f.button :submit, t('devise.registrations.edit.update'), class: "btn btn-dark mt-3"  

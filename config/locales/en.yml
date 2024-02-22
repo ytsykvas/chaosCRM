@@ -83,8 +83,6 @@ en:
         second_name: "Second name"
         email: "Email"
         phone: "Phone number"
-        company_name: "Company name"
-        user_type: "Supplier or seller"
         password: "Password"
         six_or_more: "%{number} characters minimum"
         password_hint: "Come up with a password"

@@ -8,7 +8,7 @@ h4 = @setting.user.full_name
         = f.label t('customers.block.label')
     .row
       .col
-        = f.text_area :comment, rows: '5', class: 'form-control mt-2'
+        = f.text_area :comment, rows: '5', class: 'form-control mt-2', data: { test_id: 'block-reason-input' }
       .col 
         p = t('customers.block.hint')
         p = t('customers.block.you_can_turn_off_ban')

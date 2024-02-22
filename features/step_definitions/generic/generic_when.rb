@@ -26,13 +26,17 @@ end
 When(/I fill "(.*?)" in the (.*?) (field|select box)/) do |text, field_test_id, type|
   hash_of_data_test_id = {
     # Devise
-    email: 'email-input',
-    password: 'password-input',
+    'email': 'email-input',
+    'password': 'password-input',
     'password confirmation': 'password-confirmation-input',
-    'phone number': 'phone-number-input',
+    'phone number': 'phone-input',
     'first name': 'first-name-input',
     'last name': 'last-name-input',
-    'search': 'search_field'
+    'search': 'search_field',
+    # block customer
+    'ban reason': 'block-reason-input',
+    # customers # edit
+    '': ''
   }.stringify_keys
 
   input_element = find("[data-test-id='#{hash_of_data_test_id[field_test_id.downcase]}']")
@@ -48,6 +52,7 @@ When(/I click on the (.*?) (link|button)/) do |test_id, type|
     # dashboard
   }
   button_test_id = {
+    # Base
     'submit': 'submit_button',
     'sign in': 'log_in_button',
     'sign out': 'log_out_button',
@@ -55,7 +60,11 @@ When(/I click on the (.*?) (link|button)/) do |test_id, type|
     'have never been': 'never_been_button',
     'long time ago': 'long_time_button',
     'skip filters': 'skip_filters_button',
-    'download XLS': 'download_xls_button'
+    'download XLS': 'download_xls_button',
+    # customers show
+    'edit user': 'edit-user-button',
+    'ban user': 'ban-user-button',
+    'unban user': 'unban-user-button'
   }.stringify_keys
   object = case type
            when 'link'
