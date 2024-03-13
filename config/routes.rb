@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'registrations/create'
   get 'up' => 'rails/health#show', as: :rails_health_check
+
   get '/change_locale_to_en', to: 'application#change_locale_to_en', as: :change_locale_to_en
   get '/change_locale_to_uk', to: 'application#change_locale_to_uk', as: :change_locale_to_uk
+
+  get '/profile', to: 'pages#profile'
+  get 'registrations/create'
 
   root 'pages#index'
   devise_for :users
@@ -21,9 +24,12 @@ Rails.application.routes.draw do
       get 'block'
     end
   end
+
   resource :user_setting, only: [:index] do
     put 'block_customer', on: :member
     put 'unblock_customer', on: :member
   end
-  get '/profile', to: 'pages#profile'
+
+  resources :employees, only: %i[index show edit update] do
+  end
 end

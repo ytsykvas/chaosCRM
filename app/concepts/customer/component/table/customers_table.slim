@@ -13,8 +13,6 @@
           td = customer.phone
           td = customer.email
           td = customer.last_visit.present? ? customer.last_visit.to_date.to_s : t('customers.table.never')
-.pagination-centered
-  = will_paginate @customers, renderer: BootstrapPagination::Rails
 .container 
   .row
     .col
@@ -36,3 +34,5 @@
       = link_to t('customers.filter_buttons.skip_filters'), customers_path,
               class: 'btn btn-outline-primary d-block mt-2',
               data: { test_id: 'skip_filters_button' }
+.pagination-centered
+  = will_paginate @customers, renderer: BootstrapPagination::Rails

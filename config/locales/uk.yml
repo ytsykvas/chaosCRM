@@ -163,9 +163,9 @@ uk:
     index: "Головна"
     services: "Послуги"
     masters: "Майстри"
-    reserve: "Записатись"
     contacts: "Контакти"
-    my_account: "Мій кабінет"
+    сareers: "Вакансії"
+    my_account: "Кабінет"
     enter: "Увійти"
     exit: "Вийти"
   account:
@@ -247,3 +247,13 @@ uk:
     unblock:
       success_notice: "Користувача успішно розблоковано."
       error_alert: "Не вдалось розблокувати користувача."
+  employees:
+    index:
+      title: "Команда працівників"
+      search: "Шукати працівника"
+      table:
+        name: "Ім'я"
+        phone: "Телефон"
+        email: "Пошта"
+        last_visit: "Минулий запис"
+        newt_visit: "Наступний запис"

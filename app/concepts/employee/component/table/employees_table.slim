@@ -1,0 +1,20 @@
+.table-responsive
+  table.table.table-bordered.mt-3
+    thead
+      tr
+        th = t('employees.index.table.name')
+        th = t('employees.index.table.phone')
+        th = t('employees.index.table.email')
+        th = t('employees.index.table.last_visit')
+        th = t('employees.index.table.newt_visit')
+    tbody
+      - @employees.each do |employee|
+        tr
+          td = link_to "#{employee.full_name}", employee_path(employee)
+          td = employee.phone
+          td = employee.email
+          td = employee.email
+          td = employee.email
+.pagination-centered
+  = will_paginate @employees, renderer: BootstrapPagination::Rails
+= render Component::CenteredBottomPicture.new(path: 'statue/22.jpg')

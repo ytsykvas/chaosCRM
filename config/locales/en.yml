@@ -163,7 +163,7 @@ en:
     index: "Home"
     services: "Services"
     masters: "Masters"
-    reserve: "Reserve"
+    сareers: "Careers"
     contacts: "Contacts"
     my_account: "My page"
     enter: "Enter"
@@ -247,3 +247,13 @@ en:
     unblock:
       success_notice: "Customer is banned successfuly"
       error_alert: "Error while blocking customer."
+  employees:
+    index:
+      title: "A team of workers"
+      search: "Search employee"
+      table:
+        name: "Name"
+        phone: "Phone"
+        email: "Email"
+        last_visit: "Last visit"
+        newt_visit: "Next visit"
