@@ -14,13 +14,13 @@ h1 = t('customers.show.visits_table.title')
     tbody
       - @visits.each do |visit|
         tr
-          td = visit.visit_date.to_date
-          td = visit.conclusion['status']
-          td = visit.conclusion['services']
+          td = "#{visit.visit_date.strftime('%d.%m.%Y (%H:%M)')}"
+          td = visit.conclusion.present? ? t('customers.show.visits_table.done') : t('customers.show.visits_table.not_finished')
+          td = visit.conclusion.present? ? visit.conclusion['services'] : t('basic.no_data')
           td = visit.employee.full_name
-          td = visit.conclusion['gross']
-          td = visit.conclusion['net']
-          td = visit.conclusion['new_points']
-          td = visit.conclusion['used_points'].to_s
+          td = visit.conclusion.present? ? visit.conclusion['gross'] : t('basic.no_data')
+          td = visit.conclusion.present? ? visit.conclusion['net'] : t('basic.no_data')
+          td = visit.conclusion.present? ? visit.conclusion['new_points'] : t('basic.no_data')
+          td = visit.conclusion.present? ? visit.conclusion['used_points'] : t('basic.no_data')
 .pagination-centered
   = will_paginate @visits, renderer: BootstrapPagination::Rails

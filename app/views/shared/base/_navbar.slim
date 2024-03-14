@@ -17,9 +17,9 @@
           .col
             li.nav-item
               = link_to t('navbar.сareers'), "#", class: "nav-link"
-          .col
-            li.nav-item
-              = link_to t('navbar.contacts'), "#", class: "nav-link"
+          / .col
+          /   li.nav-item
+          /     = link_to t('navbar.contacts'), "#", class: "nav-link"
       ul.navbar-nav.ms-auto
         - if current_user.present?
           li.nav-item.mt-1

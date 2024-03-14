@@ -9,4 +9,5 @@ class Visit < ApplicationRecord
   validates :visitor, :employee, :payment_status, :visit_date, presence: true
 
   scope :with_conclusion, -> { where.not(conclusion: nil) }
+  scope :future_employee_visits, ->(user) { where(employee_id: user.id, conclusion: nil) }
 end

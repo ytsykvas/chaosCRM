@@ -1,1 +1,25 @@
 = render Component::TitleBack.new(title: "#{@employee.full_name}", back_path: employees_path)
+.row
+  .col-sm.mt-3.text-center
+    = image_tag('statue/22.jpg', class: "rounded-circle", style: "width: 200px;")
+  .col-sm
+    = render Employee::Component::Table::EmployeeDataTable.new(@employee, @total_visits)
+  .col-sm.text-center
+    .container
+      .row.mt-3
+        = link_to t('employees.show.buttons.add_visit'), "#", class: 'btn btn-success'
+      .row.mt-3
+        = link_to t('employees.show.buttons.schedule'), "#", class: 'btn btn-dark'
+      .row.mt-3
+        = link_to t('employees.show.buttons.future_visits'), "#", class: 'btn btn-dark'
+      .row.mt-3
+        = link_to t('employees.show.buttons.last_visits'), "#", class: 'btn btn-dark'
+      .row.mt-3
+        = link_to t('employees.show.buttons.employee_statistic'), "#", class: 'btn btn-dark'
+      .row.mt-3
+        = link_to t('employees.show.buttons.edit_employee'), "#", class: 'btn btn-dark'
+.row.mt-3
+  - if @today_visits.present?
+    = render Employee::Component::Table::TodayVisitsTable.new(@today_visits)
+  - else 
+    h1 = t('employees.show.today_visits_table.no_opened_visits')

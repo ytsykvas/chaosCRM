@@ -1,4 +1,7 @@
-= render Component::TitleBack.new(title: "#{@customer.full_name}", back_path: customers_path)
+= render Component::TitleBack.new(title: "#{@customer.full_name}", back_path: customers_path, button_text: t('account.admin_navbar.customers'))
+- if !@customer.visitor?
+  .alert.alert-danger
+    p = t('customers.show.employee_alert')
 - if @account_status == 'banned'
   .alert.alert-danger
     p = t('customers.show.visitor_blocked') 
@@ -14,7 +17,7 @@
         - if @user.admin?
           = link_to t('customers.show.edit'), edit_customer_path, class: 'btn btn-dark', data: { test_id: 'edit-user-button' }
       .row.mt-3
-        - if (@user.admin? && @account_status == 'active') || (@user.admin? && @account_status == nil)
+        - if (@user.admin? && @account_status == 'active' && @customer.visitor?) || (@user.admin? && @account_status == nil)
           = link_to t('customers.show.block'), block_customer_path, class: 'btn btn-danger', data: { test_id: 'ban-user-button' }
         - elsif @user.admin? && @account_status == 'banned'
           = link_to t('customers.show.turn_off_block'), unblock_customer_user_setting_path(@customer),

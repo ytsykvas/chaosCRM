@@ -1,6 +1,7 @@
 uk:
   basic:
     back: "Назад"
+    no_data: "Немає даних"
   pundit:
     default: 'Ви не можете здійснити цю дію.'
     customers_policy:
@@ -208,6 +209,7 @@ uk:
       blocked_users: "Забанені клієнти"
       skip_filters: "Скинути фільтри"
     show:
+      employee_alert: "Це твій колега"
       book_visit: "Записати візит"
       edit: "Редагувати"
       statistic: "Статистика"
@@ -220,6 +222,8 @@ uk:
         title: "Останні записи клієнта:"
         visit_date: "Дата запису"
         status: "Статус"
+        done: "Готово"
+        not_finished: "Не завершено"
         services: "Послуги"
         employee: "Майстер"
         gross: "Gross"
@@ -257,3 +261,29 @@ uk:
         email: "Пошта"
         last_visit: "Минулий запис"
         newt_visit: "Наступний запис"
+    show:
+      buttons:
+        add_visit: "Новий запис"
+        schedule: "Розклад"
+        future_visits: "Майбутні записи"
+        last_visits: "Минулі записи"
+        employee_statistic: "Статистика"
+        edit_employee: "Редагувати працівника"
+      data_table:
+        phone: "Телефон"
+        email: "Пошта"
+        total_visits: "Виконаних записів"
+      today_visits_table:
+        title: "Відкриті записи на сьогодні:"
+        no_opened_visits: "На сьогодні немає записів."
+        customer: "Клієнт"
+        time: "Час запису"
+        payment_status: "Статус оплати"
+        visit_status: "Статус запису"
+        open: "Відкрито"
+        closed: "Завершено"
+        actions: "Дії"
+        payed: "Оплачено"
+        not_payed: "Не оплачено"
+        edit_visit: "Змінити"
+        show_visit: "Показати"

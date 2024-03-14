@@ -1,6 +1,7 @@
 en:
   basic:
     back: "Back"
+    no_data: "No data"
   pundit:
     default: 'You cannot perform this action.'
     customers_policy:
@@ -208,6 +209,7 @@ en:
       blocked_users: "Baned customers"
       skip_filters: "Skip filters"
     show:
+      employee_alert: "This is your teamate"
       book_visit: "Reserve visit"
       edit: "Edit"
       statistic: "Statistic"
@@ -220,6 +222,8 @@ en:
         title: "Last visits:"
         visit_date: "Visit date"
         status: "Status"
+        done: "Done"
+        not_finished: "Not finished"
         services: "Services"
         employee: "Employee"
         gross: "Gross"
@@ -257,3 +261,27 @@ en:
         email: "Email"
         last_visit: "Last visit"
         newt_visit: "Next visit"
+    show:
+      buttons:
+        add_visit: "Add a visit"
+        schedule: "Schedule"
+        future_visits: "Future visits"
+        last_visits: "Last visits"
+        employee_statistic: "Statistic"
+        edit_employee: "Edit employee"
+      data_table:
+        phone: "phone"
+        email: "Email"
+        total_visits: "Finished visits"
+      today_visits_table:
+        title: "Opened visits for today:"
+        no_opened_visits: "No visits for today."
+        customer: "Customer"
+        time: "Time"
+        payment_status: "Payment status"
+        visit_status: "Visit status"
+        actions: "Actions"
+        payed: "Payed"
+        not_payed: "Not payed"
+        edit_visit: "Edit"
+        show_visit: "Show"

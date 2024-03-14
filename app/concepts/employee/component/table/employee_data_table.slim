@@ -1,0 +1,12 @@
+.table-responsive
+  table.table.table-bordered.mt-3
+    tbody 
+      tr 
+        td = t('employees.show.data_table.email')
+        td = @employee.email
+      tr 
+        td = t('employees.show.data_table.phone')
+        td = @employee.phone
+      tr 
+        td = t('employees.show.data_table.total_visits')
+        td = @total_visits
