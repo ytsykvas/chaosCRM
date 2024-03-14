@@ -65,6 +65,7 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     'skip filters button': 'customers.filter_buttons.skip_filters',
     'can not visit customers': 'pundit.customers_policy.index?',
     'sign in to continue': 'devise.failure.unauthenticated',
+    'back to customers': 'account.admin_navbar.customers',
     # customer
     'book visit for customer': 'customers.show.book_visit',
     'customer statistic': 'customers.show.statistic',

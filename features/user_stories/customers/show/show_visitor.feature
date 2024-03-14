@@ -5,7 +5,7 @@ Feature: User can visit customer info page
     And We register admin user
     Then I visit first customer page
     And I see first customer
-    And I should see the text: back
+    And I should see the text: back to customers
     And I should see the text: name
     And I should see the text: phone
     And I should see the text: email
@@ -21,7 +21,7 @@ Feature: User can visit customer info page
     And We register employee user
     Then I visit first customer page
     And I see first customer
-    And I should see the text: back
+    And I should see the text: back to customers
     And I should see the text: name
     And I should see the text: phone
     And I should see the text: email
