@@ -212,7 +212,7 @@ en:
       employee_alert: "This is your teamate"
       book_visit: "Reserve visit"
       edit: "Edit"
-      statistic: "Statistic"
+      visits: "All visits"
       block: "Ban visitor"
       turn_off_block: "Make account active"
       no_visits: "Don`t have visits yet."

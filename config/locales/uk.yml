@@ -212,7 +212,7 @@ uk:
       employee_alert: "Це твій колега"
       book_visit: "Записати візит"
       edit: "Редагувати"
-      statistic: "Статистика"
+      visits: "Всі записи"
       block: "Забанити клієнта"
       turn_off_block: "Розбанити клієнта"
       no_visits: "У клієнта ще немає візитів"

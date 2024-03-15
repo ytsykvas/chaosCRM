@@ -68,7 +68,7 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     'back to customers': 'account.admin_navbar.customers',
     # customer
     'book visit for customer': 'customers.show.book_visit',
-    'customer statistic': 'customers.show.statistic',
+    'customer visits': 'customers.show.visits',
     'edit customer': 'customers.show.edit',
     'block customer': 'customers.show.block',
     'visitor can not visit customer page': 'pundit.customers_policy.show?',
