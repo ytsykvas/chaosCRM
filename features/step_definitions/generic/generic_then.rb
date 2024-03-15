@@ -87,7 +87,10 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     'success unblock notice': 'customers.unblock.success_notice',
     # edit customer
     'successfull user update': 'customers.edit.success_update',
-    'error while updating user': 'customers.edit.error_update'
+    'error while updating user': 'customers.edit.error_update',
+    # employees index
+    'employees list title': 'employees.index.title',
+    'can not visit employees': 'pundit.employees_policy.index?'
   }.stringify_keys
   text = I18n.t(hash_of_i18n_keys.fetch(key))
   wait ||= Capybara.default_max_wait_time
@@ -138,4 +141,18 @@ Then(/^I should receive a file with the name "(.*?)"/) do |filename|
   end
 
   File.delete('customers.xls') if File.exist?('customers.xls')
+end
+
+Then(/^I should see full names of all (customers|admins|employees)/) do |account_type|
+  if account_type == 'customers'
+    users = User.customers
+  elsif account_type == 'admins'
+    users = User.admins
+  elsif account_type == 'employees'
+    users = User.employees
+  end
+
+  users.each do |user|
+    expect(page).to have_content(user.full_name)
+  end
 end

@@ -12,6 +12,8 @@ When(/I visit (.*?) page/) do |page|
            profile_path
          when 'customers'
            customers_path
+         when 'employees'
+           employees_path
          when 'first customer'
            customer_path(1)
          end

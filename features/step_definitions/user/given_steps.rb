@@ -13,8 +13,9 @@ Given(/^We register (.*?) user/) do |type|
   User.last.update!(account_type: type)
 end
 
-Given(/^We have (.*?) customers/) do |number|
-  number.to_i.times { FactoryBot.create(:user) }
+Given(/^We have (\d+) (customers|admins|employees)/) do |number, user_type|
+  user_type = 'visitor' if user_type == 'customers'
+  number.to_i.times { FactoryBot.create(:user, account_type: user_type.singularize) }
 end
 
 Given(/^The last customer have this phone number "(.*?)"/) do |number|
