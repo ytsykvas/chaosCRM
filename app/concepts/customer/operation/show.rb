@@ -7,7 +7,10 @@ class Customer::Operation::Show < Operation::Base
     authorize!(:customers, :show?)
 
     customer = User.find(params[:id])
-    visits = customer.visits_as_customer.includes(:employee).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    visits = customer.visits_as_customer
+                     .includes(:employee)
+                     .order(created_at: :desc)
+                     .paginate(page: params[:page], per_page: 10)
 
     self.model = {
       user: user,
