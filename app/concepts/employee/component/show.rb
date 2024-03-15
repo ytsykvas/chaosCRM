@@ -3,7 +3,7 @@
 class Employee::Component::Show < ViewComponent::Base
   def initialize(model:)
     @employee = model[:employee]
-    @total_visits = model[:visits][:total_visits]
     @today_visits = model[:visits][:today_visits]
+    @without_conclusion = model[:visits][:without_conclusion]
   end
 end

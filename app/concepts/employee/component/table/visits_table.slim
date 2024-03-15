@@ -1,0 +1,31 @@
+- if @type == 'today visits'
+  h1 = t('employees.show.visits_table.today_title')
+- elsif @type == 'without conclusion' 
+  h1 = t('employees.show.visits_table.without_conclusion')
+.table-responsive
+  table.table.table-bordered.mt-3
+    thead
+      tr
+        th = t('employees.show.visits_table.customer')
+        th = t('employees.show.visits_table.time')
+        th = t('employees.show.visits_table.payment_status')
+        th = t('employees.show.visits_table.visit_status')
+        th = t('employees.show.visits_table.actions')
+    tbody
+      - @visits.each do |visit|
+        tr
+          td = link_to "#{visit.visitor.full_name}", customer_path(visit.visitor)
+          td = visit.visit_date.strftime('%d.%m.%Y (%H:%M)')
+          td = visit.payment_status == 'finished' ? t('employees.show.visits_table.payed') : t('employees.show.visits_table.not_payed')
+          td = visit.conclusion.present? ? t('employees.show.visits_table.closed') : t('employees.show.visits_table.open')
+          td
+            - if @type == 'today visits'
+              = link_to t('employees.show.visits_table.edit_visit'), "#", class: 'btn btn-success me-3'
+              - if visit.conclusion.present?
+                = link_to t('employees.show.visits_table.show_visit'), "#", class: 'btn btn-primary'
+            - elsif @type == 'without conclusion'
+              = link_to t('employees.show.visits_table.create_conclusion'), "#", class: 'btn btn-success me-3'
+              = link_to t('employees.show.visits_table.cancell'), "#", class: 'btn btn-danger mt-2 mb-2'
+- if @type == 'without conclusion' 
+  .pagination-centered
+    = will_paginate @visits, renderer: BootstrapPagination::Rails

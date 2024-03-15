@@ -273,8 +273,11 @@ en:
         phone: "phone"
         email: "Email"
         total_visits: "Finished visits"
-      today_visits_table:
-        title: "Opened visits for today:"
+      visits_table:
+        open: "Opened"
+        closed: "Closed"
+        today_title: "Opened visits for today:"
+        without_conclusion: "Not closed visits"
         no_opened_visits: "No visits for today."
         customer: "Customer"
         time: "Time"
@@ -285,3 +288,5 @@ en:
         not_payed: "Not payed"
         edit_visit: "Edit"
         show_visit: "Show"
+        create_conclusion: "Add a conclusion"
+        cancell: "Cancell"

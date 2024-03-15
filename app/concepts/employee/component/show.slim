@@ -20,6 +20,9 @@
         = link_to t('employees.show.buttons.edit_employee'), "#", class: 'btn btn-dark'
 .row.mt-3
   - if @today_visits.present?
-    = render Employee::Component::Table::TodayVisitsTable.new(@today_visits)
+    = render Employee::Component::Table::VisitsTable.new(@today_visits, 'today visits')
   - else 
-    h1 = t('employees.show.today_visits_table.no_opened_visits')
+    h1 = t('employees.show.visits_table.no_opened_visits')
+.row.mt-3
+  - if @without_conclusion.present?
+    = render Employee::Component::Table::VisitsTable.new(@without_conclusion, 'without conclusion')
