@@ -1,0 +1,24 @@
+= render Component::TitleBack.new(title: t('employees.edit.title'), back_path: employee_path(@employee))
+
+= simple_form_for @employee, url: employee_path(@employee) do |f|
+  .form-inputs
+    .row
+      .col
+        = f.input :first_name,
+                label: t('devise.registrations.new.first_name'),
+                input_html: { data: { test_id: 'first-name-input' } }
+
+      .col
+        = f.input :last_name,
+                label: t('devise.registrations.new.second_name'),
+                input_html: { data: { test_id: 'last-name-input' } }
+    .row
+      .col
+        = f.input :phone,
+                label: t('devise.registrations.new.phone'),
+                input_html: { data: { test_id: 'phone-input' } }
+      .col
+        = f.input :email,
+                label: t('devise.registrations.new.email'),
+                input_html: { data: { test_id: 'email-input' } }
+    = f.button :submit, t('devise.registrations.edit.update'), class: "btn btn-dark mt-3"  

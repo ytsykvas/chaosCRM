@@ -2,11 +2,11 @@
 
 class Employee::Operation::Edit < Operation::Base
   def perform!(user:, params:)
-    authorize!(:Employees, :edit?)
-    # employee = User.find(params[:id])
+    authorize!(:employees, :edit?)
+    employee = User.find(params[:id])
 
-    # self.model = {
-    #   employee: employee
-    # }
+    self.model = {
+      employee: employee
+    }
   end
 end

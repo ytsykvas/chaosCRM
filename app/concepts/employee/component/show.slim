@@ -17,7 +17,7 @@
       .row.mt-3
         = link_to t('employees.show.buttons.employee_statistic'), "#", class: 'btn btn-dark'
       .row.mt-3
-        = link_to t('employees.show.buttons.edit_employee'), "#", class: 'btn btn-dark'
+        = link_to t('employees.show.buttons.edit_employee'), edit_employee_path(@employee), class: 'btn btn-dark'
 .row.mt-3
   - if @today_visits.present?
     = render Employee::Component::Table::VisitsTable.new(@today_visits, 'today visits')

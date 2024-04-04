@@ -10,6 +10,8 @@ en:
     employees_policy:
       index?: "You cannot see this page. You are not an admin."
       show?: "You cannot see this page. You are not an admin."
+      edit?: "You cannot see this page. You are not an admin."
+      update?: "You cannot update employee. You are not an admin or employee."
     pages_policy:
       profile?: 'You should sign in to see your profile.'
     users_policy:
@@ -293,3 +295,7 @@ en:
         show_visit: "Show"
         create_conclusion: "Add a conclusion"
         cancell: "Cancell"
+    edit:
+      title: "Edit employee"
+      error_update:
+      success_update:

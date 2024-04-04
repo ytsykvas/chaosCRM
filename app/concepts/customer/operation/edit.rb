@@ -6,7 +6,7 @@ class Customer::Operation::Edit < Operation::Base
     customer = User.find(params[:id])
 
     self.model = {
-      customer: customer
+      customer:
     }
   end
 end
