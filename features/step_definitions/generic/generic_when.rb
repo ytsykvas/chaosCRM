@@ -51,7 +51,7 @@ end
 
 When(/I click on the (.*?) (link|button)/) do |test_id, type|
   link_test_id = {
-    # dashboard
+    'employee name': 'employee_name_link'
   }
   button_test_id = {
     # Base
@@ -70,7 +70,7 @@ When(/I click on the (.*?) (link|button)/) do |test_id, type|
   }.stringify_keys
   object = case type
            when 'link'
-             link_test_id[test_id.downcase]
+             link_test_id[test_id.to_sym]
            when 'button'
              button_test_id[test_id]
            else

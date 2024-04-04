@@ -10,7 +10,7 @@
     tbody
       - @employees.each do |employee|
         tr
-          td = link_to "#{employee.full_name}", employee_path(employee)
+          td = link_to "#{employee.full_name}", employee_path(employee), data: { test_id: "employee_name_link" }
           td = employee.phone
           td = employee.email
           td = employee.email

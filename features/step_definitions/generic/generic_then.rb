@@ -90,7 +90,10 @@ Then(/(After waiting max (\d*) seconds )?I (should see|should not see) the text:
     'error while updating user': 'customers.edit.error_update',
     # employees index
     'employees list title': 'employees.index.title',
-    'can not visit employees': 'pundit.employees_policy.index?'
+    'can not visit employees': 'pundit.employees_policy.index?',
+    # show employee
+    'opened visits title': 'employees.show.visits_table.today_title',
+    'without conclusion title': 'employees.show.visits_table.without_conclusion'
   }.stringify_keys
   text = I18n.t(hash_of_i18n_keys.fetch(key))
   wait ||= Capybara.default_max_wait_time

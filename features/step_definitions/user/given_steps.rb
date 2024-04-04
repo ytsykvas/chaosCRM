@@ -29,3 +29,21 @@ end
 Given(/^(.*?) customers used our service later then 1 month/) do |number|
   User.visitors.limit(number.to_i).each { |user| user.update!(last_visit: 2.months.ago) }
 end
+
+Given(/^First customer have (\d+) orders to first employee for (yesterday|today|tomorrow)/) do |orders, period|
+  employee = User.all.employees.first
+  customer = User.all.visitors.first
+
+  orders.to_i.times do
+    visit_date = case period
+                 when 'yesterday'
+                   1.day.ago
+                 when 'today'
+                   Time.current
+                 when 'tomorrow'
+                   1.day.from_now
+                 end
+
+    FactoryBot.create(:visit, visitor: customer, employee:, visit_date:, conclusion: nil)
+  end
+end
