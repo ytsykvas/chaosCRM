@@ -16,6 +16,8 @@ en:
       profile?: 'You should sign in to see your profile.'
     users_policy:
       update?: 'Only admin can update user`s data.'
+    visits_policy:
+      index?: "Only an administrator or an employee can view an employee's visits history."
   devise:
     confirmations:
       new:
@@ -282,7 +284,7 @@ en:
         open: "Opened"
         closed: "Closed"
         today_title: "Opened visits for today:"
-        without_conclusion: "Not closed visits"
+        without_conclusion: "Not closed past visits"
         no_opened_visits: "No visits for today."
         customer: "Customer"
         time: "Time"

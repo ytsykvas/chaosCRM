@@ -1,0 +1,10 @@
+- if @customer.admin? || @customer.employee?
+  = render Component::TitleBack.new(title: "#{@customer.full_name}", back_path: employee_path(@customer))
+- elsif @customer.visitor?
+  = render Component::TitleBack.new(title: "#{@customer.full_name}", back_path: customer_path(@customer))
+
+- if @visits.present?
+  = render Customer::Component::Table::CustomerVisitsTable.new(@visits)
+- else
+  .container.text-center
+    h1 = t('customers.show.no_visits')

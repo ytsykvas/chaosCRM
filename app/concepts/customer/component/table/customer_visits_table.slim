@@ -1,12 +1,16 @@
-h1 = t('customers.show.visits_table.title')
+- if @title.nil?
+  h1 = t('customers.show.visits_table.title')
+- else 
+  h1 = @title[:title]
 .table-responsive
   table.table.table-bordered.mt-3
     thead
       tr
         th = t('customers.show.visits_table.visit_date')
+        th = t('employees.show.visits_table.customer')
+        th = t('customers.show.visits_table.employee')
         th = t('customers.show.visits_table.status')
         th = t('customers.show.visits_table.services')
-        th = t('customers.show.visits_table.employee')
         th = t('customers.show.visits_table.gross')
         th = t('customers.show.visits_table.net')
         th = t('customers.show.visits_table.new_points')
@@ -15,9 +19,10 @@ h1 = t('customers.show.visits_table.title')
       - @visits.each do |visit|
         tr
           td = "#{visit.visit_date.strftime('%d.%m.%Y (%H:%M)')}"
+          td = link_to "#{visit.visitor.full_name}", customer_path(visit.visitor)
+          td = link_to "#{visit.employee.full_name}", employee_path(visit.employee)
           td = visit.conclusion.present? ? t('customers.show.visits_table.done') : t('customers.show.visits_table.not_finished')
           td = visit.conclusion.present? ? visit.conclusion['services'] : t('basic.no_data')
-          td = visit.employee.full_name
           td = visit.conclusion.present? ? visit.conclusion['gross'] : t('basic.no_data')
           td = visit.conclusion.present? ? visit.conclusion['net'] : t('basic.no_data')
           td = visit.conclusion.present? ? visit.conclusion['new_points'] : t('basic.no_data')

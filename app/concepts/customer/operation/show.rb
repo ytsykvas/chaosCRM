@@ -15,7 +15,7 @@ class Customer::Operation::Show < Operation::Base
     self.model = {
       user: user,
       customer: customer,
-      visits: visits
+      visits: visits.paginate(page: params[:page], per_page: 5)
     }
   end
 end

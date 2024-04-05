@@ -103,9 +103,6 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.8, < 3)
     builder (3.2.4)
-    bullet (7.1.6)
-      activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.11)
     capybara (3.40.0)
       addressable
       matrix
@@ -379,7 +376,6 @@ GEM
     ttfunk (1.7.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uniform_notifier (1.16.0)
     view_component (3.10.0)
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
@@ -412,7 +408,6 @@ DEPENDENCIES
   awesome_rails_console
   bootsnap
   bootstrap (~> 5.2)
-  bullet
   capybara-selenium
   capybara-slow_finder_errors
   cucumber-rails

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
     member do
       get 'block'
+      get 'visits', to: 'visits#index'
     end
   end
 

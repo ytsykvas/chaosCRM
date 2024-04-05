@@ -1,7 +1,10 @@
-- if @type == 'today visits'
-  h1 = t('employees.show.visits_table.today_title')
-- elsif @type == 'without conclusion' 
-  h1 = t('employees.show.visits_table.without_conclusion')
+- if @title.nil?
+  - if @type == 'today visits'
+    h1 = t('employees.show.visits_table.today_title')
+  - elsif @type == 'without conclusion' 
+    h1 = t('employees.show.visits_table.without_conclusion')
+- else
+  h1 = @title[:title]
 .table-responsive
   table.table.table-bordered.mt-3
     thead
@@ -20,7 +23,9 @@
           td = visit.conclusion.present? ? t('employees.show.visits_table.closed') : t('employees.show.visits_table.open')
           td
             - if @type == 'today visits'
-              = link_to t('employees.show.visits_table.edit_visit'), "#", class: 'btn btn-success me-3'
+              = link_to t('employees.show.visits_table.edit_visit'), "#", class: 'btn btn-dark me-3'
+              = link_to t('employees.show.visits_table.create_conclusion'), "#", class: 'btn btn-success me-3'
+              = link_to t('employees.show.visits_table.cancell'), "#", class: 'btn btn-danger mt-2 mb-2'
               - if visit.conclusion.present?
                 = link_to t('employees.show.visits_table.show_visit'), "#", class: 'btn btn-primary'
             - elsif @type == 'without conclusion'

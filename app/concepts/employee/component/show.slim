@@ -13,15 +13,16 @@
       .row.mt-3
         = link_to t('employees.show.buttons.future_visits'), "#", class: 'btn btn-dark'
       .row.mt-3
-        = link_to t('employees.show.buttons.last_visits'), "#", class: 'btn btn-dark'
+        = link_to t('employees.show.buttons.last_visits'), visits_customer_path(@employee), class: 'btn btn-dark'
       .row.mt-3
         = link_to t('employees.show.buttons.employee_statistic'), "#", class: 'btn btn-dark'
       .row.mt-3
         = link_to t('employees.show.buttons.edit_employee'), edit_employee_path(@employee), class: 'btn btn-dark'
 .row.mt-3
   - if @today_visits.present?
-    = render Employee::Component::Table::VisitsTable.new(@today_visits, 'today visits')
-  - else 
+    = render Employee::Component::Table::VisitsTable.new(@today_visits,
+                                                         'today visits')
+  - else
     h1 = t('employees.show.visits_table.no_opened_visits')
 .row.mt-3
   - if @without_conclusion.present?

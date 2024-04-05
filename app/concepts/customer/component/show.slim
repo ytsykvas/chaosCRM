@@ -12,7 +12,7 @@
       .row.mt-3
         = link_to t('customers.show.book_visit'), "#", class: 'btn btn-success'
       .row.mt-3
-        = link_to t('customers.show.visits'), "#", class: 'btn btn-dark'
+        = link_to t('customers.show.visits'), visits_customer_path, class: 'btn btn-dark'
       .row.mt-3
         - if @user.admin?
           = link_to t('customers.show.edit'), edit_customer_path, class: 'btn btn-dark', data: { test_id: 'edit-user-button' }
@@ -27,6 +27,8 @@
   .col-8
     = render Customer::Component::Table::CustomerDataTable.new(@customer, @visits)
 .row.mt-3
+  - if @today_visits.present?
+    = render Customer::Component::Table::CustomerVisitsTable.new(@today_visits, title: t('employees.show.visits_table.today_title'))
   - if @visits.present?
     = render Customer::Component::Table::CustomerVisitsTable.new(@visits)
   - else
