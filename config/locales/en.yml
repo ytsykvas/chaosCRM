@@ -18,6 +18,7 @@ en:
       update?: 'Only admin can update user`s data.'
     visits_policy:
       index?: "Only an administrator or an employee can view an employee's visits history."
+      employee_and_employee?: "One employee cannot view the personal data of another."
   devise:
     confirmations:
       new:

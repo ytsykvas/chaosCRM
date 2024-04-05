@@ -8,6 +8,10 @@ class VisitsPolicy < ApplicationPolicy
   end
 
   def index?
-    user&.admin? || (user&.employee? && (user.id == user_with_visits.id))
+    user&.admin? || user&.employee?
+  end
+
+  def employee_and_employee?
+    user&.admin?
   end
 end

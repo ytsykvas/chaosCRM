@@ -4,7 +4,7 @@ class Employee::Operation::Show < Operation::Base
   require 'will_paginate/array'
 
   def perform!(user:, params:)
-    authorize!(:Employees, :show?)
+    authorize!(:employees, :show?)
 
     employee = User.find(params[:id])
     all_visits = employee.visits_as_employee.includes([:visitor])
